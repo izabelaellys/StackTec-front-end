@@ -1,0 +1,484 @@
+@charset "UTF-8";
+/* Estilo para a barra de navegação */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgb(122, 119, 119);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav img{
+  width: 135px;
+  height: auto;
+  margin-bottom: 7px;
+}
+
+/* Caixa de pesquisa */
+nav form {
+  width: 100%;
+  float: center;
+  padding: 20px 10px 0px;
+  border-radius: 10px;
+  margin-left: 150px;
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  
+}
+
+.menu{
+  float: right;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 120px;
+}
+
+#btnNav {
+  background-color:#d40b0b;
+  color: white;
+  padding: 10px 10px;
+  margin: 10px 60px;
+  margin-bottom: 0px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 75%;
+  margin-top: 7px;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+#btnNav:hover {
+  background-color:#c8d1b9;
+}
+
+/* Estilo da Caixa de Pesquisa*/
+.caixa-pesquisa{
+  float: center;
+  margin-left: 300px;
+
+}
+/* Estilo para botão de enviar pergunta */
+input[type="submit"]{
+  background-color:#d40b0b;
+  color: white;
+  padding: 10px 10px;
+  margin: 10px 10px;
+  margin-bottom: 0px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 20%;
+  margin-top: 7px;
+  text-align: center;
+  font-size: 14px;
+}
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+input[type="submit"]:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/* Estilo para botão de limpar */
+input[type="reset"]{
+  background-color:#d40b0b;
+  color: white;
+  padding: 10px 10px;
+  margin: 1px;
+  margin-bottom: 0px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 10%;
+  margin-top: 7px;
+  text-align: center;
+  font-size: 14px;
+  position: absolute;
+  right: 400px;
+  
+}
+input[type="reset"]:hover {
+  background-color: #7c7c7c;
+}
+
+input[type="reset"]:active {
+  background-color: #929292;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/* ---------------------------------- */
+input[type="text"] {
+  width: 100%;
+  padding: 5px 0px;
+  margin: 15px 0;
+  margin-bottom: 30px;
+  display: inline-block;
+  border: 1px solid #e4d8d8;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.svgIcon-use{
+  margin-left: -50px;
+}
+
+input[type="text"]::placeholder {
+  color: #aaa;
+  font-weight: normal;
+}
+
+/* Estilos para o corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 100%;
+  }
+ 
+  i{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  
+  /* Estilo do Filtro */
+  .myBtnContainer{
+    float: center;
+    margin-left: 440px;
+    margin-top: 50px;
+    margin-bottom: -20px;
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+  }
+
+  .btn {
+    border-color: black;
+    border-width: 1px;
+    padding: 12px 20px;
+    cursor: pointer;
+    background-color: #bdb7b7;
+    border-radius: 0px;
+    margin: -3px;
+  }
+  
+  .show{
+    display: block;
+  }
+
+h4{
+  margin: 10px;
+  margin-left: 30px;
+}
+
+  .btn:hover {
+    background-color: #ddd;
+  }
+
+  /* Estilos para o Botão das Perguntas */
+  .buttonPergunta{
+    margin-top: -50px;
+    margin-right: 10px;
+    float: right;
+  }
+
+  #btnPergunta{
+    background-color: #d40b0b;
+    text-align: center;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;   
+    width: 210px;
+    height: 50px;
+  }
+
+#btnPergunta:hover {
+  background-color:#e7f9b7;
+}
+
+  /* Estilos para as TAGs */
+#tag{
+  background-color: #d8ddd9 !important;
+  width: 100%;
+}
+
+  #tags{
+    padding: 10px 10px;
+    margin: 10px 30px;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    display: grid;
+    grid-auto-flow: column;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 60px;
+  }
+
+  #btnTag{
+    background-color: #b0afaf;
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    width: 70%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .button p{
+    margin-top: 5px;
+  }
+
+  #btnTag:hover {
+    background-color:#c8d1b9;
+  }
+
+  /* Estilo do Aside Esquerdo*/
+  .esquerda{
+    float: left;
+    position: fixed;
+    margin-top: 5px;
+    margin-left: 30px;
+    width: 390px;
+  }
+
+/* Menu de links */
+.links{
+  list-style:none;
+  border:1px solid #c0c0c0;
+  float:left;
+  }
+  .links li{
+    position:relative;
+    float:left;
+    border-right:1px solid #c0c0c0;
+    }
+    .links li a{color:#333; text-decoration:none; padding:5px 10px; display:block;}
+
+    .links li a:hover{
+    background:#333;
+    color:#fff;
+    -moz-box-shadow:0 3px 10px 0 #CCC;
+    -webkit-box-shadow:0 3px 10px 0 #ccc;
+    text-shadow:0px 0px 5px #fff;
+    }
+    .links li  ul{
+      position:absolute;
+      top:25px;
+      left:0;
+      background-color:#fff;
+      display:none;
+      }
+    .links li:hover ul, .menu li.over ul{display:block;}
+    .links li ul li{
+      border:1px solid #c0c0c0;
+      display:block;
+      width:150px;
+      }
+
+#btnMenu {
+  background-color:#f2f2f2;
+  color: black;
+  padding: 10px 10px;
+  margin: 10px 60px;
+  margin-bottom: 0px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 20%;
+  margin-left: 10px;
+  text-align: justify;
+  font-size: 15px;
+}
+
+
+#btnMenu:hover {
+  background-color:#c8d1b9;
+  
+}
+
+ /* Estilo do Aside Direito */
+ .direita{
+  float: right;
+  margin-top: 1px;
+  margin-right: 300px;
+  margin-left: auto;
+  
+}
+
+.card2{
+  width: 250px;
+  text-align: center;
+  height: fit-content;
+  margin: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  display: block;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 50px;
+  position: fixed;
+  
+}
+
+
+/* Estilo para o título do card */
+.card2 h2 {
+  font-size: 25px;
+  margin: 0px;
+  font-weight: bold;
+}
+
+/* Estilo para o texto do card */
+.card2 p {
+  font-size: 16px;
+  margin: 0;
+  margin-top: 20px;
+}
+/* Estilo do título do card2 */
+.card-title2{
+  border-bottom: 8px ridge #ccc;
+  padding-bottom: 10px;
+
+}
+
+  /* Estilo das TAGs dos posts*/
+  /* #tagCard{ 
+    height: 50px;
+    width: 70%;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    display: grid;
+    grid-auto-flow: column;
+
+  } */
+  
+  #btnCard{
+      background-color: #b1aaaa;
+      color: white;
+      padding: 10px 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 75px;
+      margin-top: 5px;
+      text-align: center;
+      float: left;
+    }
+
+
+  #btnCard:hover {
+    background-color:#c72c0d;
+  }
+
+/* Estilo para o container que envolve os cards */
+.cards {
+  display: block;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 70px; /* Adicione um espaço no topo para não sobrepôr a barra de navegação */
+}
+
+/* Estilo para os cards */
+.card {
+  width: 60%;
+  text-align: justify;
+  height: fit-content;
+  margin: 10px;
+  background-color: #dbdbdb;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  display: block;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+
+/* Estilo para o título do card */
+.card h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Estilo para o texto do card */
+.card p {
+  font-size: 16px;
+  margin: 0;
+  margin-top: 0px;
+}
+.card label{
+  font-size: 21px;
+  margin-top: 5px;
+ 
+}
+
+/* Estilo para as imagens do card */
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilo para a responsividade */
+@media screen and (max-width: 768px) {
+  .container {
+    margin-top: 120px; /* Adicione mais espaço no topo para não sobrepôr a barra de navegação em dispositivos menores */
+  }
+  .card {
+    width: calc(50% - 20px); /* Reduza o tamanho dos cards para que caibam em dispositivos menores */
+  } 
+}
+
+ /*estilos para o rodapé */
+ footer {
+  background: linear-gradient(to right, #960018, #d1001c);
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+#footer-image {
+  max-height: 25px;
+  margin-right: 20px; /* espaçamento entre imagem e borda esquerda do footer */
+}
+
+#footer-text {
+  display: inline-block;
+  font-size: 10px;
+  color: white;
+  margin-right: 10px; /* espaçamento entre imagem e texto */
+}
+
+main {
+  width 90vw;
+  margin: auto;
+  margin top: 10px;
+}
