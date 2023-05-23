@@ -272,6 +272,16 @@ button {
   }
 
 
+/* Estilo para a responsividade */
+@media screen and (max-width: 768px) {
+  .container {
+    margin-top: 120px; /* Adicione mais espaço no topo para não sobrepôr a barra de navegação em dispositivos menores */
+  }
+  .table {
+    width: calc(50% - 20px); /* Reduza o tamanho dos cards para que caibam em dispositivos menores */
+  } 
+  
+}
  /*estilos para o rodapé */
  footer {
   background: linear-gradient(to right, #960018, #d1001c);
@@ -285,15 +295,6 @@ button {
   height: 30px;
 }
 
-/* Estilo para a responsividade */
-@media screen and (max-width: 768px) {
-  .container {
-    margin-top: 120px; /* Adicione mais espaço no topo para não sobrepôr a barra de navegação em dispositivos menores */
-  }
-  .card {
-    width: calc(50% - 20px); /* Reduza o tamanho dos cards para que caibam em dispositivos menores */
-  } 
-}
 
 
 #footer-image {
