@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>StackTec</title>
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css"> 
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<script src="https://cdn.tiny.cloud/1/gicx3o02ojrz6yw827wul98zuckdwam8vgx8wwy0jt7itax6/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>     
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"> 
+</head>
+
+<body>
+	<header>
+		<nav>
+			<img src="img/logo.png" alt="logo">
+			<div class="pesquisa">
+				<form class="caixa-pesquisa">
+					<input class="form-control mr-sm-2" type="text" placeholder="   O que procura?">
+					<span class="search-icon"><svg class="svgIcon-use" width="30" height="40" viewbox="0 -5 28 15"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
+				</form>
+			</div>
+			<ul>
+				<div class="menu">
+					<div>
+						<!-- <i class="material-icons">person</i> -->
+						<input type="button" id="btnNav" value="Olá, user123!">
+					</div>
+					<div>
+						<input type="button" id="btnNav" value="SAIR">
+					</div>
+				</div>
+			</ul>
+		</nav>
+	</header>
+
+
+
+	<aside class="esquerda">
+		<div class="menu2">				
+			<div class="menuLateral">
+				<div>
+					<i class="glyphicon glyphicon-home"></i>
+					<input type="button" id="btnMenu" value="Home">
+				</div>
+				<div>
+					<i class="glyphicon glyphicon-tag"></i>
+					<input type="button"  id="btnMenu" value="Tags">
+				</div>
+				<div>
+					<i class="fa fa-question-circle"></i>
+					<input type="button" id="btnMenu" value="Perguntas">
+				</div>
+				<div>
+					<i class="glyphicon glyphicon-user"></i>
+					<input type="button" id="btnMenu" value="Usuários">
+				</div>		
+		</div>		
+	</aside>
+
+	<aside class="direita">
+		<div class="card2">
+		  <div class="card-body2">
+			<h2 class="card-title2">Dicas</h2>
+			<p>
+				A comunidade está aqui para ajudá-lo com problemas específicos de codificação, algorítmo ou linguagem.</a>
+			</p>
+			<p>Evite fazer perguntas baseadas em opiniões.</p>
+			<p>Antes de postar, pesquise no site para ter certeza de que sua pergunta não foi respondida.</p>
+		  </div>		  
+		</div>	
+			
+	</aside>
+
+	<main>
+		<div class="cards">
+			<div class="card">
+				<div class="container2" id="tagCard">					
+											
+				</div>
+			  <div class="card-body">
+				<h1>Faça uma pergunta pública</h1>
+    <form action="cadastro.php" method="post" autocomplete="off">
+            <!-- <legend>Faça sua pergunta</legend> -->
+            <p>
+                <p>Seja específico e imagine que você está fazendo esta pergunta para outra pessoa.</p>
+                <label for="ititulo">Título </label>
+                <input type="text" name="titulo" id="ititulo" required minlength="5" maxlength="15" placeholder="Qual a sua dúvida?" size="86">
+            </p>
+            <p>
+               <label for="icorpo">Descrição</label> 
+               <p>Inclua, abaixo, todas as informações que alguém precisaria para responder sua pergunta.</p>
+               <textarea name="corpo" id="icorpo" cols="90" rows="20" required></textarea>
+			   <script>
+				tinymce.init({
+				  selector: 'textarea',
+				  plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+				  toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+				  tinycomments_mode: 'embedded',
+				  tinycomments_author: 'Author name',
+				  mergetags_list: [
+					{ value: 'First.Name', title: 'First Name' },
+					{ value: 'Email', title: 'Email' },
+				  ]
+				});
+			  </script>
+            </p>
+            <p>
+                <label for="itags">Tags </label>
+                <p>Adicione até 5 tags para descrever o que é sua pergunta.</p>
+                <input type="text" name="tags" id="itags" required minlength="5" maxlength="15" placeholder="exp: css, javascript, c#"><br>
+				<input type="submit" value="Poste sua pergunta">
+            	<input type="reset" value="Limpar">
+            </p>
+            <!-- <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar"> -->
+        </fieldset>
+
+    </form>
+	</main>
+	
+</body>
+
+<footer>
+  <img id="footer-image" src="img/Guaxinim Raivoso.png" class="guaxinimraivoso" alt="Guaxinim Raivoso" />
+  <p id="footer-text"> Feito por um bando de Guaxinins Raivosos </p>   
+  
+</footer>
+
+<script src="script.js"></script>
+
+</html>
+</html>

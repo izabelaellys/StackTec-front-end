@@ -1,0 +1,127 @@
+/* estilos para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+    
+  /*estilos para a imagem da logo*/
+  .logo{
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    
+  }
+  /* estilos para o formulário de login */
+  form {
+    background-color: #ffffff;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* estilos para os campos de entrada de usuário */
+  input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type="text"]::placeholder {
+    color: #aaa;
+    font-weight: normal;
+  }
+
+  /* estilos para os campos de entrada de senha */
+  input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type="password"]::placeholder {
+    color: #aaa;
+    font-weight: normal;
+  }
+  
+  /* estilos para o botão de login */
+  input[type="submit"] {
+    background-color: #d1001c;
+    color: white;
+    padding: 12px 20px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* estilos para o botão de login quando o mouse passa sobre ele */
+  input[type="submit"]:hover {
+    background-color:#960018;
+  }
+
+  .aindac{
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: -10px;
+    }
+    
+  /* estilos para o botão de cadastro */
+  input[type="button"] {
+    max-width: 300px;
+    background-color: #d1001c;
+    color: white;
+    padding: 12px 20px;
+    margin: 15px 0px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* estilos para o botão de cadastro quando o mouse passa sobre ele */
+  input[type="button"]:hover {
+    background-color: #960018;
+  }
+
+
+   /*estilos para o rodapé */
+   footer {
+    background: linear-gradient(to right, #960018, #d1001c);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+  }
+  
+  #footer-image {
+    max-height: 25px;
+    margin-right: 20px; /* espaçamento entre imagem e borda esquerda do footer */
+  }
+
+  #footer-text {
+    display: inline-block;
+    font-size: 10px;
+    color: white;
+    margin-right: 10px; /* espaçamento entre imagem e texto */
+  }
+  
+  
+  
