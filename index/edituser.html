@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,20 +11,25 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css"> 
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<script src="https://cdn.tiny.cloud/1/gicx3o02ojrz6yw827wul98zuckdwam8vgx8wwy0jt7itax6/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>     
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="../css/telaedituser-style.css">
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+	<script src="https://cdn.tiny.cloud/1/gicx3o02ojrz6yw827wul98zuckdwam8vgx8wwy0jt7itax6/tinymce/6/tinymce.min.js"
+		referrerpolicy="origin"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
 	<header>
 		<nav>
-			<img src="img/logo.png" alt="logo">
+			<img src="../img/logo.png" alt="logo">
 			<div class="pesquisa">
 				<form class="caixa-pesquisa">
 					<input class="form-control mr-sm-2" type="text" placeholder="   O que procura?">
-					<span class="search-icon"><svg class="svgIcon-use" width="30" height="40" viewbox="0 -5 28 15"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
+					<span class="search-icon"><svg class="svgIcon-use" width="30" height="40" viewbox="0 -5 28 15">
+							<path
+								d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z">
+							</path>
+						</svg></span>
 				</form>
 			</div>
 			<ul>
@@ -43,7 +49,7 @@
 
 
 	<aside class="esquerda">
-		<div class="menu2">				
+		<div class="menu2">
 			<div class="menuLateral">
 				<div>
 					<i class="glyphicon glyphicon-home"></i>
@@ -51,7 +57,7 @@
 				</div>
 				<div>
 					<i class="glyphicon glyphicon-tag"></i>
-					<input type="button"  id="btnMenu" value="Tags">
+					<input type="button" id="btnMenu" value="Tags">
 				</div>
 				<div>
 					<i class="fa fa-question-circle"></i>
@@ -60,8 +66,8 @@
 				<div>
 					<i class="glyphicon glyphicon-user"></i>
 					<input type="button" id="btnMenu" value="Usuários">
-				</div>		
-		</div>		
+				</div>
+			</div>
 	</aside>
 
 
@@ -69,59 +75,60 @@
 	<main>
 		<div class="cards">
 			<div class="card">
-			  <div class="card-body">
-				<h1>Alterar dados</h1>
-    <!-- <form action="cadastro.php" method="post" autocomplete="off"> -->
-		<form id="edit-form" method="POST" autocomplete="off"></form>
-            <!-- <legend>Faça sua pergunta</legend> -->
-        <img src="img/account_user.png" alt="Imagem do Usuário" width="200">
-		<input type="text" value="user123@fatec.sp.gov.br" readonly>
-		<p>OBS: Não é possível editar o e-mail institucional.</p>
-		<label for="inomeuser">Novo nome:</label><br>
-        <input type="text" name="nomeuser" id="inomeuser" minlength="5" maxlength="15" placeholder="Nome completo do usuário" size="86">
-		<label for="iapelidouser">Novo apelido:</label><br>
-        <input type="text" name="apelidouser" id="iapelidouser" minlength="5" maxlength="15" placeholder="Apelido do usuário" size="86">
-		<div class="edit-group">
-			<label for="semestre">Semestre:</label><br>
-			<select id="semestre" name="semestre">
-			  <option value="" disabled selected>Selecione um semestre</option>
-			  <option value="1">1º semestre</option>
-			  <option value="2">2º semestre</option>
-			  <option value="3">3º semestre</option>
-			  <option value="4">4º semestre</option>
-			  <option value="5">5º semestre</option>
-			  <option value="6">6º semestre</option>
-			  <option value="7">7º semestre</option>
-			  <option value="8">8º semestre</option>  
-			</select>
-			<div class="edit-group">
-				<h2>Trocar senha: </h2>
-				<label for="icurrentpassword">Senha atual:</label><br>
-				<input type="password" id="icurrentpassword" name="currentpassword" minlength="6"><br>
-			  </div>
-			  <div class="edit-group">
-				<label for="inewpassword">Nova senha:</label><br>
-				<input type="password" id="inewpassword" name="newpassword" minlength="6"><br>
-				<label for="confirm-password">Confirmar senha:</label><br>
-				<input type="password" id="confirm-password" name="confirm-password" minlength="6">
-				<!-- <div class="error-message">As senhas não correspondem</div> -->
-				
-			  </div>
-		<input type="submit" value="Salvar">
-		<a href="../index.html">
-		<button class="botao" name="botaovoltar">Voltar</button></a>
-		</div>   
+				<div class="card-body">
+					<h1>Alterar dados</h1>
+					<!-- <form action="cadastro.php" method="post" autocomplete="off"> -->
+					<form id="edit-form" method="POST" autocomplete="off"></form>
+					<!-- <legend>Faça sua pergunta</legend> -->
+					<img src="../img/account_user.png" alt="Imagem do Usuário" width="200">
+					<input type="text" value="user123@fatec.sp.gov.br" readonly>
+					<p>OBS: Não é possível editar o e-mail institucional.</p>
+					<label for="inomeuser">Novo nome:</label><br>
+					<input type="text" name="nomeuser" id="inomeuser" minlength="5" maxlength="15"
+						placeholder="Nome completo do usuário" size="86">
+					<label for="iapelidouser">Novo apelido:</label><br>
+					<input type="text" name="apelidouser" id="iapelidouser" minlength="5" maxlength="15"
+						placeholder="Apelido do usuário" size="86">
+					<div class="edit-group">
+						<label for="semestre">Semestre:</label><br>
+						<select id="semestre" name="semestre">
+							<option value="" disabled selected>Selecione um semestre</option>
+							<option value="1">1º semestre</option>
+							<option value="2">2º semestre</option>
+							<option value="3">3º semestre</option>
+							<option value="4">4º semestre</option>
+							<option value="5">5º semestre</option>
+							<option value="6">6º semestre</option>
+							<option value="7">7º semestre</option>
+							<option value="8">8º semestre</option>
+						</select>
+						<div class="edit-group">
+							<h2>Trocar senha: </h2>
+							<label for="icurrentpassword">Senha atual:</label><br>
+							<input type="password" id="icurrentpassword" name="currentpassword" minlength="6"><br>
+						</div>
+						<div class="edit-group">
+							<label for="inewpassword">Nova senha:</label><br>
+							<input type="password" id="inewpassword" name="newpassword" minlength="6"><br>
+							<label for="confirm-password">Confirmar senha:</label><br>
+							<input type="password" id="confirm-password" name="confirm-password" minlength="6">
+							<!-- <div class="error-message">As senhas não correspondem</div> -->
+
+						</div>
+						<input type="submit" value="Salvar">
+						<a href="../index.html">
+							<button class="botao" name="botaovoltar">Voltar</button></a>
+					</div>
 	</main>
-	
+
 </body>
 
 <footer>
-  <img id="footer-image" src="img/Guaxinim Raivoso.png" class="guaxinimraivoso" alt="Guaxinim Raivoso" />
-  <p id="footer-text"> Feito por um bando de Guaxinins Raivosos </p>   
-  
+	<img id="footer-image" src="../img/Guaxinim Raivoso.png" class="guaxinimraivoso" alt="Guaxinim Raivoso" />
+	<p id="footer-text"> Feito por um bando de Guaxinins Raivosos </p>
+
 </footer>
 
 <script src="script.js"></script>
 
-</html>
 </html>

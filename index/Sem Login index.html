@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>StackTec</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +8,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css" !important>
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">      
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 </head>
 
 <body>
@@ -16,24 +17,28 @@
 		<div class="pesquisa">
 			<form class="caixa-pesquisa">
 				<input class="form-control mr-sm-2" type="text" placeholder="   O que procura?">
-				<span class="search-icon"><svg class="svgIcon-use" width="30" height="40" viewbox="0 -5 28 15"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
-			</form>   
+				<span class="search-icon"><svg class="svgIcon-use" width="30" height="40" viewbox="0 -5 28 15">
+						<path
+							d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z">
+						</path>
+					</svg></span>
+			</form>
 		</div>
-		<ul>		
-			<div class="menu">				
+		<ul>
+			<div class="menu">
 				<div>
 					<input type="button" id="btnNav" value="LOGIN">
 				</div>
 				<div>
 					<input type="button" id="btnNav" value="CADASTRE-SE">
-				</div>				
-			</div>		
-		</ul> 
+				</div>
+			</div>
+		</ul>
 	</nav>
 
 
-  	<div class="container" id="tag">
-		<div class= "button" id="tags">
+	<div class="container" id="tag">
+		<div class="button" id="tags">
 			<div>
 				<p><b>Principais tags: </b></p>
 			</div>
@@ -41,7 +46,7 @@
 				<input type="button" id="btnTag" value="Java">
 			</div>
 			<div>
-				<input type="button" id="btnTag" value="JavaScript">	
+				<input type="button" id="btnTag" value="JavaScript">
 			</div>
 			<div>
 				<input type="button" id="btnTag" value="C#">
@@ -65,7 +70,7 @@
 				<input type="button" id="btnTag" value="HTML">
 			</div>
 		</div>
-	
+
 	</div>
 
 	<div class="filter">
@@ -76,8 +81,8 @@
 			<button class="btn" onclick="filterSelection('all')"> Mostar Tudo</button>
 			<button class="btn" onclick="filterSelection('Recentes')"> Recentes</button>
 			<button class="btn" onclick="filterSelection('antigos')"> Antigos</button>
-			<button class="btn" onclick="filterSelection('Respondidos')"> Respondidos</button>			
-		</div>		
+			<button class="btn" onclick="filterSelection('Respondidos')"> Respondidos</button>
+		</div>
 	</div>
 
 	<div class="buttonPergunta">
@@ -85,7 +90,7 @@
 	</div>
 
 	<aside class="esquerda">
-		<div class="menu2">				
+		<div class="menu2">
 			<div class="menuLateral">
 				<div>
 					<i class="glyphicon glyphicon-home"></i>
@@ -93,7 +98,7 @@
 				</div>
 				<div>
 					<i class="glyphicon glyphicon-tag"></i>
-					<input type="button"  id="btnMenu" value="Tags">
+					<input type="button" id="btnMenu" value="Tags">
 				</div>
 				<div>
 					<i class="fa fa-question-circle"></i>
@@ -102,67 +107,67 @@
 				<div>
 					<i class="glyphicon glyphicon-user"></i>
 					<input type="button" id="btnMenu" value="Usuarios">
-				</div>		
-		</div>		
+				</div>
+			</div>
 	</aside>
 
 	<aside class="direita">
 		<div class="card2">
-		  <div class="card-body2">
-			<h2 class="card-title2">TAGs mais pesquisadas</h2>
-			<p>
-			  TAGs mais pesquisados</a>
-			</p>
-		  </div>		  
-		</div>	
+			<div class="card-body2">
+				<h2 class="card-title2">TAGs mais pesquisadas</h2>
+				<p>
+					TAGs mais pesquisados</a>
+				</p>
+			</div>
+		</div>
 		<div class="card2">
 			<div class="card-body2">
-			  <h2 class="card-title2">TAGs mais pesquisadas</h2>
-			  <p>
-				TAGs mais pesquisados</a>
-			  </p>
-			</div>			
-		  </div>		
+				<h2 class="card-title2">TAGs mais pesquisadas</h2>
+				<p>
+					TAGs mais pesquisados</a>
+				</p>
+			</div>
+		</div>
 	</aside>
 
 	<main>
-		
-<div id="posts">
-  
-</div>
 
-<script>
-    const apiResult = [{
-	tag1: "HTML",
-	tag2: "Dimas",
-    title: "title1",
-    votes: "5"
-  }, {
-    tag1: "HTML",
-	tag2: "HTML",
-	title: "title2",
-    votes: "12"
-  }, {
-    tag1: "HTML",
-	tag2: "HTML",
-	title: "title3",
-    votes: "27"
-  }, {
-    tag1: "HTML",
-	tag2: "HTML",
-	title: "title4",
-    votes: "9"
-  }
-];
-const container = document.getElementById('posts');
+		<div id="posts">
 
-apiResult.forEach((result, idx) => {
-  // Create card element
-  const card = document.createElement('div');
-  card.classList = 'card-body';
+		</div>
 
-  // Construct card content
-  const content = `
+		<script>
+			const apiResult = [{
+				tag1: "HTML",
+				tag2: "Dimas",
+				title: "title1",
+				votes: "5"
+			}, {
+				tag1: "HTML",
+				tag2: "HTML",
+				title: "title2",
+				votes: "12"
+			}, {
+				tag1: "HTML",
+				tag2: "HTML",
+				title: "title3",
+				votes: "27"
+			}, {
+				tag1: "HTML",
+				tag2: "HTML",
+				title: "title4",
+				votes: "9"
+			}
+			];
+			const container = document.getElementById('posts');
+
+			apiResult.forEach((result, idx) => {
+				// Create card element
+				const card = document.createElement('div');
+				card.classList = 'card-body';
+
+				// Construct card content
+				const content = `
     <div class="cards"> 
     <div class="card" id="collapse-${idx} aria-labelledby="heading-${idx}" data-parent="#posts">
 	  <div class="card-title">
@@ -189,21 +194,20 @@ apiResult.forEach((result, idx) => {
   </div>
   `;
 
-  // Append newyly created card element to the container
-  container.innerHTML += content;
-})
-</script>
+				// Append newyly created card element to the container
+				container.innerHTML += content;
+			})
+		</script>
 	</main>
-	
+
 </body>
 
 <footer>
-  <img id="footer-image" src="img/Guaxinim Raivoso.png" class="guaxinimraivoso" alt="Guaxinim Raivoso" />
-  <p id="footer-text"> Feito por um bando de Guaxinins Raivosos </p>   
-  
+	<img id="footer-image" src="img/Guaxinim Raivoso.png" class="guaxinimraivoso" alt="Guaxinim Raivoso" />
+	<p id="footer-text"> Feito por um bando de Guaxinins Raivosos </p>
+
 </footer>
 
 <script src="script.js"></script>
 
-</html>
 </html>
