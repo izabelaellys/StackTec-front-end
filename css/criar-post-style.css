@@ -14,7 +14,7 @@ nav {
   padding: 0 20px;
 }
 
-nav img{
+nav img {
   width: 135px;
   height: auto;
   margin-bottom: 7px;
@@ -29,10 +29,9 @@ nav form {
   margin-left: 150px;
   display: grid;
   grid-template-columns: 7fr 1fr;
-  
 }
 
-.menu{
+.menu {
   float: right;
   width: 50%;
   display: grid;
@@ -42,7 +41,7 @@ nav form {
 }
 
 #btnNav {
-  background-color:#d40b0b;
+  background-color: #d40b0b;
   color: white;
   padding: 10px 10px;
   margin: 10px 60px;
@@ -56,20 +55,18 @@ nav form {
   font-size: 14px;
 }
 
-
 #btnNav:hover {
-  background-color:#c8d1b9;
+  background-color: #c8d1b9;
 }
 
 /* Estilo da Caixa de Pesquisa*/
-.caixa-pesquisa{
+.caixa-pesquisa {
   float: center;
   margin-left: 300px;
-
 }
 /* Estilo para botão de enviar pergunta */
-input[type="submit"]{
-  background-color:#d40b0b;
+input[type="submit"] {
+  background-color: #d40b0b;
   color: white;
   padding: 10px 10px;
   margin: 10px 10px;
@@ -93,8 +90,8 @@ input[type="submit"]:active {
 }
 
 /* Estilo para botão de limpar */
-input[type="reset"]{
-  background-color:#d40b0b;
+input[type="reset"] {
+  background-color: #d40b0b;
   color: white;
   padding: 10px 10px;
   margin: 1px;
@@ -108,7 +105,6 @@ input[type="reset"]{
   font-size: 14px;
   position: absolute;
   right: 400px;
-  
 }
 input[type="reset"]:hover {
   background-color: #7c7c7c;
@@ -123,7 +119,7 @@ input[type="reset"]:active {
 input[type="text"] {
   width: 100%;
   padding: 5px 0px;
-  margin: 15px 0;
+
   margin-bottom: 30px;
   display: inline-block;
   border: 1px solid #e4d8d8;
@@ -131,7 +127,7 @@ input[type="text"] {
   box-sizing: border-box;
 }
 
-.svgIcon-use{
+.svgIcon-use {
   margin-left: -50px;
 }
 
@@ -146,153 +142,160 @@ body {
   background-color: #f2f2f2;
   width: 100%;
   height: 100%;
-  }
- 
-  i{
-    font-family: Arial, Helvetica, sans-serif;
-  }
+}
 
-  
-  /* Estilo do Filtro */
-  .myBtnContainer{
-    float: center;
-    margin-left: 440px;
-    margin-top: 50px;
-    margin-bottom: -20px;
-    display: grid;
-    grid-template-columns: 0fr 1fr;
-  }
+i {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  .btn {
-    border-color: black;
-    border-width: 1px;
-    padding: 12px 20px;
-    cursor: pointer;
-    background-color: #bdb7b7;
-    border-radius: 0px;
-    margin: -3px;
-  }
-  
-  .show{
-    display: block;
-  }
+/* Estilo do Filtro */
+.myBtnContainer {
+  float: center;
+  margin-left: 440px;
+  margin-top: 50px;
+  margin-bottom: -20px;
+  display: grid;
+  grid-template-columns: 0fr 1fr;
+}
 
-h4{
+.btn {
+  border-color: black;
+  border-width: 1px;
+  padding: 12px 20px;
+  cursor: pointer;
+  background-color: #bdb7b7;
+  border-radius: 0px;
+  margin: -3px;
+}
+
+.show {
+  display: block;
+}
+
+h4 {
   margin: 10px;
   margin-left: 30px;
 }
 
-  .btn:hover {
-    background-color: #ddd;
-  }
-
-  /* Estilos para o Botão das Perguntas */
-  .buttonPergunta{
-    margin-top: -50px;
-    margin-right: 10px;
-    float: right;
-  }
-
-  #btnPergunta{
-    background-color: #d40b0b;
-    text-align: center;
-    color: white;
-    padding: 10px 10px;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;   
-    width: 210px;
-    height: 50px;
-  }
-
-#btnPergunta:hover {
-  background-color:#e7f9b7;
+.btn:hover {
+  background-color: #ddd;
 }
 
-  /* Estilos para as TAGs */
-#tag{
+/* Estilos para o Botão das Perguntas */
+.buttonPergunta {
+  margin-top: -50px;
+  margin-right: 10px;
+  float: right;
+}
+
+#btnPergunta {
+  background-color: #d40b0b;
+  text-align: center;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 210px;
+  height: 50px;
+}
+
+#btnPergunta:hover {
+  background-color: #e7f9b7;
+}
+
+/* Estilos para as TAGs */
+#tag {
   background-color: #d8ddd9 !important;
   width: 100%;
 }
 
-  #tags{
-    padding: 10px 10px;
-    margin: 10px 30px;
-    width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
-    display: grid;
-    grid-auto-flow: column;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 60px;
-  }
+#tags {
+  padding: 10px 10px;
+  margin: 10px 30px;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-auto-flow: column;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+}
 
-  #btnTag{
-    background-color: #b0afaf;
-    color: black;
-    text-align: center;
-    font-size: 15px;
-    width: 70%;
-    height: 30px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-  }
+#btnTag {
+  background-color: #b0afaf;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+  width: 70%;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
 
-  .button p{
-    margin-top: 5px;
-  }
+.button p {
+  margin-top: 5px;
+}
 
-  #btnTag:hover {
-    background-color:#c8d1b9;
-  }
+#btnTag:hover {
+  background-color: #c8d1b9;
+}
 
-  /* Estilo do Aside Esquerdo*/
-  .esquerda{
-    float: left;
-    position: fixed;
-    margin-top: 5px;
-    margin-left: 30px;
-    width: 390px;
-  }
+/* Estilo do Aside Esquerdo*/
+.esquerda {
+  float: left;
+  position: fixed;
+  margin-top: 5px;
+  margin-left: 30px;
+  width: 390px;
+}
 
 /* Menu de links */
-.links{
-  list-style:none;
-  border:1px solid #c0c0c0;
-  float:left;
-  }
-  .links li{
-    position:relative;
-    float:left;
-    border-right:1px solid #c0c0c0;
-    }
-    .links li a{color:#333; text-decoration:none; padding:5px 10px; display:block;}
+.links {
+  list-style: none;
+  border: 1px solid #c0c0c0;
+  float: left;
+}
+.links li {
+  position: relative;
+  float: left;
+  border-right: 1px solid #c0c0c0;
+}
+.links li a {
+  color: #333;
+  text-decoration: none;
+  padding: 5px 10px;
+  display: block;
+}
 
-    .links li a:hover{
-    background:#333;
-    color:#fff;
-    -moz-box-shadow:0 3px 10px 0 #CCC;
-    -webkit-box-shadow:0 3px 10px 0 #ccc;
-    text-shadow:0px 0px 5px #fff;
-    }
-    .links li  ul{
-      position:absolute;
-      top:25px;
-      left:0;
-      background-color:#fff;
-      display:none;
-      }
-    .links li:hover ul, .menu li.over ul{display:block;}
-    .links li ul li{
-      border:1px solid #c0c0c0;
-      display:block;
-      width:150px;
-      }
+.links li a:hover {
+  background: #333;
+  color: #fff;
+  -moz-box-shadow: 0 3px 10px 0 #ccc;
+  -webkit-box-shadow: 0 3px 10px 0 #ccc;
+  text-shadow: 0px 0px 5px #fff;
+}
+.links li ul {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  background-color: #fff;
+  display: none;
+}
+.links li:hover ul,
+.menu li.over ul {
+  display: block;
+}
+.links li ul li {
+  border: 1px solid #c0c0c0;
+  display: block;
+  width: 150px;
+}
 
 #btnMenu {
-  background-color:#f2f2f2;
+  background-color: #f2f2f2;
   color: black;
   padding: 10px 10px;
   margin: 10px 60px;
@@ -306,22 +309,19 @@ h4{
   font-size: 15px;
 }
 
-
 #btnMenu:hover {
-  background-color:#c8d1b9;
-  
+  background-color: #c8d1b9;
 }
 
- /* Estilo do Aside Direito */
- .direita{
+/* Estilo do Aside Direito */
+.direita {
   float: right;
   margin-top: 1px;
   margin-right: 300px;
   margin-left: auto;
-  
 }
 
-.card2{
+.card2 {
   width: 250px;
   text-align: center;
   height: fit-content;
@@ -336,9 +336,7 @@ h4{
   padding: 20px;
   margin-bottom: 50px;
   position: fixed;
-  
 }
-
 
 /* Estilo para o título do card */
 .card2 h2 {
@@ -354,14 +352,13 @@ h4{
   margin-top: 20px;
 }
 /* Estilo do título do card2 */
-.card-title2{
+.card-title2 {
   border-bottom: 8px ridge #ccc;
   padding-bottom: 10px;
-
 }
 
-  /* Estilo das TAGs dos posts*/
-  /* #tagCard{ 
+/* Estilo das TAGs dos posts*/
+/* #tagCard{ 
     height: 50px;
     width: 70%;
     margin-bottom: 20px;
@@ -370,25 +367,24 @@ h4{
     grid-auto-flow: column;
 
   } */
-  
-  #btnCard{
-      background-color: #b1aaaa;
-      color: white;
-      padding: 10px 10px;
-      margin-bottom: 10px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      width: 75px;
-      margin-top: 5px;
-      text-align: center;
-      float: left;
-    }
 
+#btnCard {
+  background-color: #b1aaaa;
+  color: white;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 75px;
+  margin-top: 5px;
+  text-align: center;
+  float: left;
+}
 
-  #btnCard:hover {
-    background-color:#c72c0d;
-  }
+#btnCard:hover {
+  background-color: #c72c0d;
+}
 
 /* Estilo para o container que envolve os cards */
 .cards {
@@ -411,29 +407,44 @@ h4{
   display: block;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  padding: 30px 20px 20px 20px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
 }
 
+/* Titulo */
+label h1 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.titleDesc {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+label h2 {
+  font-weight: 600;
+}
+
+label:nth-child(3) {
+  margin-bottom: 20px;
+}
+
+.label-tags {
+  margin-top: 30px;
+}
+
+#ititulo,
+#itags {
+  padding: 7px 10px;
+}
 
 /* Estilo para o título do card */
 .card h2 {
   font-size: 24px;
   margin: 0;
-}
-
-/* Estilo para o texto do card */
-.card p {
-  font-size: 16px;
-  margin: 0;
-  margin-top: 0px;
-}
-.card label{
-  font-size: 21px;
-  margin-top: 5px;
- 
 }
 
 /* Estilo para as imagens do card */
@@ -448,12 +459,14 @@ h4{
     margin-top: 120px; /* Adicione mais espaço no topo para não sobrepôr a barra de navegação em dispositivos menores */
   }
   .card {
-    width: calc(50% - 20px); /* Reduza o tamanho dos cards para que caibam em dispositivos menores */
-  } 
+    width: calc(
+      50% - 20px
+    ); /* Reduza o tamanho dos cards para que caibam em dispositivos menores */
+  }
 }
 
- /*estilos para o rodapé */
- footer {
+/*estilos para o rodapé */
+footer {
   background: linear-gradient(to right, #960018, #d1001c);
   text-align: center;
   position: fixed;
@@ -478,7 +491,7 @@ h4{
 }
 
 main {
-  width 90vw;
+  width: 90vw;
   margin: auto;
-  margin top: 10px;
+  margin-top: 10px;
 }
