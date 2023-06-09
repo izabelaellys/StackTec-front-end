@@ -74,17 +74,6 @@ body {
   font-weight: normal;
 }
 
-/* Estilo que deixa os placeholders transparentes quando o input está em foco */
-input::-webkit-input-placeholder { -webkit-transition:.5s;}
-input:-moz-input-placeholder { -moz-transition:.5s;}
-input::-moz-input-placeholder { -moz-transition:.5s;}
-input:-ms-input-placeholder { -ms-transition:.5s;}
-
-input:focus::-webkit-input-placeholder { color:transparent;}
-input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
-input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
-input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
-
 /* Estilo do link de redefinição de senha */
 .formscontainer form a{
   font-style: normal;
@@ -99,6 +88,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 .formscontainer form .btn{
   width: 339px;
   margin: 41px auto 0;
+  text-transform: uppercase;
 }
 
 .formscontainer p{
@@ -112,5 +102,6 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 .formscontainer > .btn{
   width: 100%;
-  width: 300px ;
+  width: 300px;
+  text-transform: uppercase;
 }
