@@ -1,0 +1,59 @@
+@font-face{
+  font-family: 'Nunito sans';
+  src: url(../fonts/NunitoSans-Regular.ttf) format('truetype');
+  font-weight: 'regular';
+}
+
+@font-face {
+  font-family:'Nunito sans';
+  src: url(../fonts/NunitoSans-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+*{
+  font-family: 'Nunito sans';
+  font-style: normal;
+}
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d1001c;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn:hover{
+  background-color: #960018;
+}
+
+/*estilos para o rodapé */
+footer {
+  background: linear-gradient(to right, #960018, #d1001c);
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+#footer-image {
+  max-height: 25px;
+  margin-right: 20px; /* espaçamento entre imagem e borda esquerda do footer */
+}
+
+#footer-text {
+  display: inline-block;
+  font-size: 10px;
+  color: white;
+  margin-right: 10px; /* espaçamento entre imagem e texto */
+}
