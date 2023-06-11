@@ -141,6 +141,7 @@ nav .logadosection a:nth-child(2){
 .menu{
   position: fixed;
   top: 122px;
+  left: 0;
   display: none;
   flex-direction: column;
   max-width: 260px;
