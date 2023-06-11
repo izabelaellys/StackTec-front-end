@@ -1,7 +1,7 @@
 @font-face{
   font-family: 'Nunito sans';
   src: url(../fonts/NunitoSans-Regular.ttf) format('truetype');
-  font-weight: 'regular';
+  font-weight: normal;
 }
 
 @font-face {
@@ -46,18 +46,24 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
   background-color: #960018;
 }
 
+button{
+  cursor: pointer;
+}
+
 /* Estilo para a nav */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 60px;
+  height: 77px;
   background: rgb(122, 119, 119);
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  z-index: 99;
 }
 
 nav img{
@@ -83,6 +89,7 @@ nav .caixa-pesquisa input{
   border: 1px solid #605E5E;
   border-radius: 20px;
   padding: 0 50px 0 23px;
+  outline: none;
 }
 
 nav .caixa-pesquisa .search-icon{
@@ -92,9 +99,14 @@ nav .caixa-pesquisa .search-icon{
 }
 
 nav .loginsection{
-  display: flex;
+  display: none;
   margin-right: 99px;
 }
+
+nav .loginsection.active{
+  display: flex;
+}
+
 
 nav .loginsection .btn:first-of-type{
   width: 60px;
@@ -103,7 +115,65 @@ nav .loginsection .btn:first-of-type{
 
 nav .loginsection .btn:nth-of-type(2){
   width: 115px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+nav .logadosection{
+  display: none;
+  align-items: center;
+  margin-right: 99px;
+}
+
+nav .logadosection.active{
+  display: flex;
+}
+
+nav .logadosection p{
+  font-size: 25px;
+  line-height: 34px;
+  margin: 0 19px;
+}
+
+nav .logadosection a:nth-child(2){
+  margin-right: 11px;
+}
+
+/* Estilo menu lateral */
+.menu{
+  position: fixed;
+  top: 122px;
+  display: none;
+  flex-direction: column;
+  max-width: 260px;
+  width: 100%;
+  padding: 43px 20px 0px 46px;
+}
+
+.menu.active{
+  display: flex;
+}
+
+.menu a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000000;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.menu a.active{
+  font-weight: bold;
+}
+
+.menu a:not(:first-of-type){
+  margin-top: 16px;
+}
+
+.menu a svg{
+  max-width: 22px;
+  height: 19px;
+  margin-right: 10px;
 }
 
 /*estilos para o rodapé */
@@ -112,6 +182,7 @@ footer {
   text-align: center;
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
