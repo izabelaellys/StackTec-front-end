@@ -1,0 +1,119 @@
+.tagcontainer{
+  position: fixed;
+  width: 100%;
+  height: 45px;
+  left: 0px;
+  top: 77px;
+  background: #E8E4E4;
+  padding: 0 82px;
+
+  display: flex;
+  align-items: center;
+
+  z-index: 99;
+}
+
+.tagcontainer p{
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.tagcontainer .buttoncontainer{
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  margin-left: 10px;
+}
+
+.btn-tag{
+  background: #CDCDCD;
+  border-radius: 5px;
+  padding: 8px 10px;
+  height: 32px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  color: black;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.postcontainer{
+  display: flex;
+  flex-direction: column;
+  width: 713px;
+  padding: 43px 15px 43px;
+  margin: 122px auto 0;
+}
+
+.postcontainer .postaction{
+  display: flex;
+  justify-content: space-between;
+}
+
+.postcontainer .postaction .filter{
+  display: flex;
+  align-items: center;
+}
+
+.postcontainer .postaction .filter p{
+  font-size: 15px;
+  line-height: 20px;
+  margin-right: 20px;
+}
+
+.postcontainer .postaction .filter button{
+  height: 28px;
+  border: 1px solid #737373;
+  background: rgba(217, 217, 217, 0.42);
+}
+
+.postcontainer .postaction .filter button.active{
+  background: #D9D9D9;
+}
+
+.postcontainer .postaction .filter button:first-of-type{
+  border-radius: 3px 0px 0px 3px;
+}
+
+.postcontainer .postaction .filter button:last-of-type{
+  border-radius: 0px 3px 3px 0px;
+}
+
+.postcontainer .questioncard{
+  display: flex;
+  width: 683.74px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  margin: 37px 0 0;
+  padding: 16px 14px;
+  column-gap: 17px;
+}
+
+.postcontainer .questioncard .resposta{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 16px;
+  border: 1px solid #FF0000;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 5px;
+}
+
+.postcontainer .questioncard .resposta.active{
+  border: 1px solid #26B11A;
+}
+
+.postcontainer .questioncard .questioncontent > a{
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000000;
+  margin: 18px 0;
+}
