@@ -138,7 +138,7 @@ nav .logadosection a:nth-child(2){
 }
 
 /* Estilo menu lateral */
-.menu{
+.menu, .menu-admin{
   position: fixed;
   top: 122px;
   left: 0;
@@ -149,11 +149,11 @@ nav .logadosection a:nth-child(2){
   padding: 43px 20px 0px 46px;
 }
 
-.menu.active{
+.menu.active, .menu-admin.active{
   display: flex;
 }
 
-.menu a{
+.menu a, .menu-admin a{
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -163,15 +163,15 @@ nav .logadosection a:nth-child(2){
   line-height: 27px;
 }
 
-.menu a.active{
+.menu a.active, .menu-admin a.active{
   font-weight: bold;
 }
 
-.menu a:not(:first-of-type){
+.menu a:not(:first-of-type), .menu-admin a:not(:first-of-type){
   margin-top: 16px;
 }
 
-.menu a svg{
+.menu a svg, .menu-admin a svg{
   max-width: 22px;
   height: 19px;
   margin-right: 10px;
