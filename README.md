@@ -1,1 +1,0 @@
-# StackTec-front-end
