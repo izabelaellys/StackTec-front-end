@@ -4,6 +4,11 @@
   <title>StackTec - Cadastro </title>
   <link rel="stylesheet" type="text/css" href="assets/css/common.css">
   <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+  <script>
+    if(localStorage.getItem('name')){
+      window.location.href = "/";
+    }
+  </script>
 </head>
 <body>
   <div class="formscontainer">
@@ -36,7 +41,7 @@
           <option value="SEM_8">8º semestre</option>  
         </select>
         <div class="form-group">
-          <input type="hidden" type="roles" id="roles" name="roles" value="ROLE_USER">
+          <input type="hidden" type="roles" id="roles" name="roles" value="ROLE_ALUNO">
         </div>
         <div class="form-group">
           <label for="password">Senha:</label>
@@ -55,7 +60,6 @@
     <img id="footer-image" src="assets/img/Guaxinim Raivoso.png" class="guaxinimraivoso" alt="Guaxinim Raivoso" />
     <p id="footer-text">Feito por um bando de Guaxinins Raivosos</p>   
   </footer>
-
   <script src="assets/js/footer.js"></script>
 </body>
 </html>
