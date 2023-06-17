@@ -1,7 +1,5 @@
 const loginForm = document.getElementById("formLogin");
-const email = document.getElementById("email").value
-const passwo = document.getElementById("password").value
-const cookieValue = null;
+
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -26,10 +24,12 @@ loginForm.addEventListener("submit", function (event) {
   fetch("http://localhost:8080/auth/signin", requestOptions)
     .then(response => response.json())
     .then(result => {
+      // Salva os dados da requisição no localstorage
       localStorage.setItem('myCookie', result.cookie);
       localStorage.setItem('name', result.nome)      
       localStorage.setItem('email', result.email)
       localStorage.setItem('roles', result.roles[0])
+      // Redireciona para a página incial
       window.location.href = "/";
     })
     .catch(error => console.log('error', error));
