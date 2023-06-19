@@ -34,13 +34,11 @@ loginForm.addEventListener("submit", function (event) {
     }
   }
 
-  console.log(JSON.stringify(jsonObject))
-
   // Faz a requisição na api
   var myHeaders = new Headers();
   myHeaders.append("accept", "application/json");
   myHeaders.append("Content-Type", "application/json");
-  
+
   var requestOptions = {
     method: 'POST',
     headers: myHeaders,
@@ -50,22 +48,32 @@ loginForm.addEventListener("submit", function (event) {
 
   fetch("http://localhost:8080/auth/signup", requestOptions)
     .then(response => {
-      if(response.status >= 400 && response.status < 500){
+      if (response.status >= 400 && response.status < 500) {
         document.querySelector('#generic-error').classList.add('active')
-      }else if(response.status == 201){
+      } else if (response.status == 201) {
         // Oculta o formulário e exibe a mensagem de sucesso
         loginForm.classList.add('deactive')
         document.querySelector('.sucess').classList.add('active')
 
         setTimeout(() => {
-          window.location.href = "/login.html";
+          window.location.href = "/";
         }, "5000")
       }
       esperaMsgError()
       return response.text()
     })
     .then(result => {
-      console.log(result)
+      const responseObject = JSON.parse(result)
+      if(responseObject?.message){
+        document.querySelector('#duplicate-email-error').classList.add('active')
+        return
+      }
+
+      // Salva os dados da requisição no localstorage
+      localStorage.setItem('myCookie', responseObject.cookie);
+      localStorage.setItem('name', responseObject.nome)      
+      localStorage.setItem('email', responseObject.email)
+      localStorage.setItem('roles', responseObject.roles[0])
     })
     .catch(error => console.log('error', error));
 });

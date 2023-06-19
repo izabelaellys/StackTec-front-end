@@ -18,20 +18,20 @@
     <form id="register-form" method="POST">
       <div class="form-group">
         <label for="apelido">Apelido:</label>
-        <input type="text" id="apelido" name="apelido">
+        <input type="text" id="apelido" name="apelido" required>
       </div>
       <div class="form-group">
         <label for="name">Nome:</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" required>
       </div>
       <div class="form-group">
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" required>
       </div>
       <p id="email-error" class="forms-error">O email precisa ter o domínio @fatec.sp.gov.br</p>
       <div class="form-group">
         <label for="semestre">Semestre:</label>
-        <select id="semestre" name="semestre">
+        <select id="semestre" name="semestre" required>
           <option value="" disabled selected>Selecione um semestre</option>
           <option value="SEM_1">1º semestre</option>
           <option value="SEM_2">2º semestre</option>
@@ -47,11 +47,11 @@
         </div> -->
         <div class="form-group">
           <label for="password">Senha:</label>
-          <input type="password" id="password" name="password" minlength="5">
+          <input type="password" id="password" name="password" minlength="6" required>
         </div>
         <div class="form-group">
           <label for="confirm-password">Confirmar senha:</label>
-          <input type="password" id="confirm-password" name="confirm-password" minlength="5">
+          <input type="password" id="confirm-password" name="confirm-password" minlength="6" required>
         </div>
         <p id="password-error" class="forms-error">As duas senhas precisam ser iguais</p>
         <p id="duplicate-email-error"  class="forms-error">O Email já está em uso</p>
@@ -61,8 +61,8 @@
     </form>
     <div class='sucess'>
       <div class="c-loader"></div>
-      <p>Cadastro criado com sucesso, em 5 segundos você será redirecionado para a página de login ou pode fazer isso
-        manualmente clicando <a href="/login.html">aqui</a></p>
+      <p>Cadastro criado com sucesso, em 5 segundos você será redirecionado para a página inicial ou pode fazer isso
+        manualmente clicando <a href="/">aqui</a></p>
     </div>
   </div>
 
