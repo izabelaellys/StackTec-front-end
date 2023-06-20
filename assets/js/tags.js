@@ -1,71 +1,28 @@
 let simulaDados = {
-  "content": [
-    {
-      "id": 1,
-      "nome": "Java",
-      "qtdePosts": 0
-    },
-    {
-      "id": 2,
-      "nome": "POO",
-      "qtdePosts": 0
-    },
-    {
-      "id": 3,
-      "nome": "JS",
-      "qtdePosts": 0
-    },
-    {
-      "id": 4,
-      "nome": "MPCT",
-      "qtdePosts": 0
-    },
-    {
-      "id": 5,
-      "nome": "PLA",
-      "qtdePosts": 0
-    },
-    {
-      "id": 6,
-      "nome": "LABD",
-      "qtdePosts": 0
-    },
-    {
-      "id": 7,
-      "nome": "Empreededorismo",
-      "qtdePosts": 0
-    },
-    {
-      "id": 8,
-      "nome": "Java",
-      "qtdePosts": 0
-    }
-  ],
-  "pageable": {
-    "sort": {
-      "unsorted": true,
-      "sorted": false,
-      "empty": true
-    },
-    "offset": 0,
-    "pageNumber": 0,
-    "pageSize": 20,
-    "paged": true,
-    "unpaged": false
-  },
-  "totalPages": 2,
-  "last": true,
-  "totalElements": 4,
-  "size": 20,
-  "number": 0,
-  "sort": {
-    "unsorted": true,
-    "sorted": false,
-    "empty": true
-  },
-  "numberOfElements": 4,
-  "first": true,
-  "empty": false
+  "totalPages": 4,
+  "maxResults": 2,
+  "tagDtos": [
+      {
+          "id": 1,
+          "nome": "Java",
+          "qtdePosts": 0
+      },
+      {
+          "id": 2,
+          "nome": "POO",
+          "qtdePosts": 0
+      },
+      {
+          "id": 3,
+          "nome": "JS",
+          "qtdePosts": 0
+      },
+      {
+          "id": 4,
+          "nome": "MPCT",
+          "qtdePosts": 0
+      }
+  ]
 }
 
 /* Declaração de const e variáveis */
@@ -75,17 +32,15 @@ const urlParams = new URLSearchParams(queryString);
 
 // Dados para a paginação
 const tagContent = document.querySelector('.tagcontent')
-const itemsByPage = simulaDados.content.length / simulaDados.totalPages
-const totalPages = simulaDados.totalPages
+const itemsByPage = 4
+const totalPages = simulaDados.maxResults
 let atualPage = !urlParams.has('page') ? 1 : urlParams.get('page') <= totalPages ? urlParams.get('page') : totalPages
 const paginationNumber = document.querySelector('.numberscontainer')
 
 /* Fim da declaração de const e variáveis */
 
 // Insere as tags selecionadas na página tags
-let pageDados = simulaDados.content.slice(itemsByPage * (atualPage - 1), itemsByPage * atualPage)
-
-pageDados.forEach((item) => {
+simulaDados.tagDtos.forEach((item) => {
   tagContent.innerHTML += '<div class="tagcard" data-value=' + item.nome + '><p>' + item.nome + '</p><div class="viewcontainer"><img src="assets/img/view.png" alt=""></div></div>'
 })
 
@@ -150,7 +105,7 @@ allTagCards.forEach((item) => {
 
 
 var myHeaders = new Headers();
-myHeaders.append("Cookie", "bezkoder=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBmYXRlYy5zcC5nb3YuYnIiLCJpYXQiOjE2ODcxMzYwMjksImV4cCI6MTY4NzIyMjQyOX0.h4yN9HWQLWofjkYzcj7fazR6JFuoFX0RaCMgCrrMyhgme717pqA84oCpguxgBO_uawBAg9uSHDi_s7rd1TDLkg; Path=/api; Max-Age=60; Expires=Mon, 19 Jun 2023 00:54:49 GMT; HttpOnly");
+myHeaders.append("Cookie", "bezkoder=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huYmFyZGVlbjE4QGZhdGVjLnNwLmdvdi5iciIsImlhdCI6MTY4NzIyNDYyOSwiZXhwIjoxNjg3MzExMDI5fQ.D4oalIOgcWsZm3mE_1GPxIk9yGuel-7-ctUE8N5S1PlvlEm2_knPf0SzYfHH2yb9bQ6JgZOM9fWkRKYo2gM4ZA; Path=/api; Max-Age=60; Expires=Tue, 20 Jun 2023 01:31:29 GMT; HttpOnly");
 
 var requestOptions = {
   method: 'GET',
@@ -158,7 +113,9 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://localhost:8080/tag/v1.0/all/pagination", requestOptions)
+url = "http://localhost:8080/tag/v1.1/paginated-desc/" + atualPage + "/" + itemsByPage
+
+fetch("http://localhost:8080/tag/v1.1/paginated-desc/1/4", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
