@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>StackTec</title>
   <link rel="stylesheet" type="text/css" href="assets/css/common.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/posts.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/home.css">
 </head>
+
 <body>
   <nav>
     <a href="/"><img src="assets/img/logo.png" alt="logo"></a>
-		<form class="caixa-pesquisa">
-			<input type="text" placeholder="O que você está buscando?">
-			<span class="search-icon"><svg class="svgIcon-use" width="30" height="40" viewbox="0 -5 28 15"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
-		</form>  	
-		<div class="loginsection active">				
-			<a href="login.html" class="btn">Login</a>
-			<a href="cadastro.html" class="btn">Cadastre-se</a>			
-		</div>
+    <form class="caixa-pesquisa">
+      <input type="text" placeholder="O que você está buscando?">
+      <span class="search-icon"><svg class="svgIcon-use" width="30" height="40" viewbox="0 -5 28 15">
+          <path
+            d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z">
+          </path>
+        </svg></span>
+    </form>
+    <div class="loginsection active">
+      <a href="login.html" class="btn">Login</a>
+      <a href="cadastro.html" class="btn">Cadastre-se</a>
+    </div>
     <div class="logadosection">
       <a href="">
-        <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect width="35" height="35" fill="url(#pattern0)"/><defs><pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1"><use xlink:href="#image0_116_235" transform="scale(0.0166667)"/></pattern><image id="image0_116_235" width="60" height="60" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABmJLR0QA/wD/AP+gvaeTAAADlUlEQVRoge2azWsdVRiHn/fMTIjRkIIgai/SEhdF3Og/0I0UtWB6ZxxcGHAholLR4sKVVO3KrR8bETEQd8Odm1xbBEWxi7q0q+LKUDDqQtCaSGwyH68Lr5LQ2Lkf76RXmGebOc/9/XLmnjlzuNDQ0NDQMLnIQXzIn3F8n1cUCwonRfUIIi0AVNdV5KqInM/zfHVmdfWHurPUWngrjg/7RXEWeBbwKi4vRaSTF8Vrt62sXK0rU22Ft6PolKguA3cMOXSzhMXpNO3VkcvVId2JoldEtcPwZQFmHXR32u2XrXNBDTPcn9kO4/8zyxLa1jNtWngrDFs+fMdoM7sfm1meH7u91/vJyGd7S/twDruyALOB779l6LOb4f6jZ43q1XhYihyOzKTpuoXMbIa9PD+FfVkAz1ddsJKZFVaRx6xc+7gft3KZFRa438p1g1t13spluWjdbejai8hhK5VlYcvVuTZ3LTutScay8B+Grr2oblipLAub7YZuQGTydloKa1auOt12jyWRC1aufdznrVxmhfM8XwUKK98eteqnVjKzwv3jmSUr3y4+stpHg/FjKfe8N4BNM6HqRgCmb0umhWeS5EdXlk9hc2uXpXOLkqY/G7j+xXzj4a+sfIbqq0A5hqYEzkx3Ombf3X+o7RDvehg+4eATYHaogaobDp72u12zlXk3tW0tp9O0F3jePCLvAvkAQ0pgORA5VldZOKCD+K0wbPmqC+rcSVE9CrT6f1pXWBO4kEPPcjVuaGhoaPg/UttjSePYy4riYUQeQvVBVB8AWogcAuYAFK6J6u/AOs5dAa4A3wbOXZYkqePNy7awttt3ZSJPisgJVT0OHBotlfwmql+r6ueB73ckSX6xyjh2YY3jqZ08jxFZFHgE8A1y7SZXkS+A5SnnOpIkO+PIRi6s7faduXMvlKqnBe4ZJ8SgyN/nZu/7nveBJMmvIzqGQ+N4KivLF1F9k1Fv2fG5Jqpv+3Nz78jS0vVhBg5VOGu3j6vIx8DRoeLVx/cCzwRpemnQAQO9LSnIdhieU5EvmZyyAPMKF7MoOqsDTl7lRQqSRdF7qJ4eP1+NiHwYdDrPC+jNLquc4SwMX5r4sgCqz2VRVJlzkFv6jEGcg0G18pc/gxS+1yDKQVGZdZDClw2CHBSVWSsLi+rrDHYmdavJ+llvSmXhoNv9Spx7FPgG2LZIZsw2cEmcOxF0uxdvdZiGhoaGhoaG/+YvhQspk0IFnHsAAAAASUVORK5CYII="/></defs></svg>
+        <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <rect width="35" height="35" fill="url(#pattern0)" />
+          <defs>
+            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <use xlink:href="#image0_116_235" transform="scale(0.0166667)" />
+            </pattern>
+            <image id="image0_116_235" width="60" height="60"
+              xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABmJLR0QA/wD/AP+gvaeTAAADlUlEQVRoge2azWsdVRiHn/fMTIjRkIIgai/SEhdF3Og/0I0UtWB6ZxxcGHAholLR4sKVVO3KrR8bETEQd8Odm1xbBEWxi7q0q+LKUDDqQtCaSGwyH68Lr5LQ2Lkf76RXmGebOc/9/XLmnjlzuNDQ0NDQMLnIQXzIn3F8n1cUCwonRfUIIi0AVNdV5KqInM/zfHVmdfWHurPUWngrjg/7RXEWeBbwKi4vRaSTF8Vrt62sXK0rU22Ft6PolKguA3cMOXSzhMXpNO3VkcvVId2JoldEtcPwZQFmHXR32u2XrXNBDTPcn9kO4/8zyxLa1jNtWngrDFs+fMdoM7sfm1meH7u91/vJyGd7S/twDruyALOB779l6LOb4f6jZ43q1XhYihyOzKTpuoXMbIa9PD+FfVkAz1ddsJKZFVaRx6xc+7gft3KZFRa438p1g1t13spluWjdbejai8hhK5VlYcvVuTZ3LTutScay8B+Grr2oblipLAub7YZuQGTydloKa1auOt12jyWRC1aufdznrVxmhfM8XwUKK98eteqnVjKzwv3jmSUr3y4+stpHg/FjKfe8N4BNM6HqRgCmb0umhWeS5EdXlk9hc2uXpXOLkqY/G7j+xXzj4a+sfIbqq0A5hqYEzkx3Ombf3X+o7RDvehg+4eATYHaogaobDp72u12zlXk3tW0tp9O0F3jePCLvAvkAQ0pgORA5VldZOKCD+K0wbPmqC+rcSVE9CrT6f1pXWBO4kEPPcjVuaGhoaPg/UttjSePYy4riYUQeQvVBVB8AWogcAuYAFK6J6u/AOs5dAa4A3wbOXZYkqePNy7awttt3ZSJPisgJVT0OHBotlfwmql+r6ueB73ckSX6xyjh2YY3jqZ08jxFZFHgE8A1y7SZXkS+A5SnnOpIkO+PIRi6s7faduXMvlKqnBe4ZJ8SgyN/nZu/7nveBJMmvIzqGQ+N4KivLF1F9k1Fv2fG5Jqpv+3Nz78jS0vVhBg5VOGu3j6vIx8DRoeLVx/cCzwRpemnQAQO9LSnIdhieU5EvmZyyAPMKF7MoOqsDTl7lRQqSRdF7qJ4eP1+NiHwYdDrPC+jNLquc4SwMX5r4sgCqz2VRVJlzkFv6jEGcg0G18pc/gxS+1yDKQVGZdZDClw2CHBSVWSsLi+rrDHYmdavJ+llvSmXhoNv9Spx7FPgG2LZIZsw2cEmcOxF0uxdvdZiGhoaGhoaG/+YvhQspk0IFnHsAAAAASUVORK5CYII=" />
+          </defs>
+        </svg>
       </a>
       <p id="username">Olá, </p>
       <button class="btn" id="logout">Sair</button>
-    </div>		
-	</nav>
+    </div>
+  </nav>
   <div class="tagcontainer">
     <p>Principais tags:</p>
     <div class="buttoncontainer">
@@ -44,44 +60,118 @@
 
   <div class="menu">
     <a href="\" class="active">
-      <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.3734 9.50842C18.0161 9.50842 17.7394 9.7511 17.7394 10.0674V17.7028H13.2432V14.5849C13.2432 14.2925 12.9665 14.0368 12.632 14.0368H9.38108C9.02347 14.0368 8.73546 14.2924 8.73546 14.5849V17.7028H4.2506V10.3209C4.2506 10.0262 3.97416 9.7814 3.61655 9.7814C3.28231 9.7814 3.00562 10.0262 3.00562 10.3209V18.2618C3.00562 18.5565 3.28231 18.8013 3.61655 18.8013H9.38108C9.71532 18.8013 9.99202 18.5565 9.99202 18.2618V15.1439H11.9979V18.2618C11.9979 18.5565 12.2746 18.8013 12.632 18.8013H18.3734C18.7077 18.8013 18.9844 18.5565 18.9844 18.2618V10.0674C18.9844 9.75113 18.7077 9.50842 18.3734 9.50842Z" fill="black"/><path d="M21.8206 9.94395L16.8172 5.51741V2.49923C16.8172 2.18505 16.529 1.94241 16.1716 1.94241C15.8371 1.94241 15.5605 2.18508 15.5605 2.49923V4.41026L11.4332 0.752881C11.3067 0.640205 11.1565 0.579529 11.0067 0.579529C10.8338 0.579529 10.6838 0.642359 10.5571 0.752881L0.192834 9.88327C-0.0558173 10.1021 -0.0722815 10.4531 0.192834 10.6546C0.423296 10.8886 0.820269 10.8734 1.06892 10.6546L11.0067 1.92071L20.9214 10.737C21.0247 10.828 21.175 10.88 21.371 10.88C21.5439 10.88 21.6937 10.828 21.8206 10.737C22.0513 10.5333 22.0685 10.165 21.8206 9.94395Z" fill="black"/></svg>
+      <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M18.3734 9.50842C18.0161 9.50842 17.7394 9.7511 17.7394 10.0674V17.7028H13.2432V14.5849C13.2432 14.2925 12.9665 14.0368 12.632 14.0368H9.38108C9.02347 14.0368 8.73546 14.2924 8.73546 14.5849V17.7028H4.2506V10.3209C4.2506 10.0262 3.97416 9.7814 3.61655 9.7814C3.28231 9.7814 3.00562 10.0262 3.00562 10.3209V18.2618C3.00562 18.5565 3.28231 18.8013 3.61655 18.8013H9.38108C9.71532 18.8013 9.99202 18.5565 9.99202 18.2618V15.1439H11.9979V18.2618C11.9979 18.5565 12.2746 18.8013 12.632 18.8013H18.3734C18.7077 18.8013 18.9844 18.5565 18.9844 18.2618V10.0674C18.9844 9.75113 18.7077 9.50842 18.3734 9.50842Z"
+          fill="black" />
+        <path
+          d="M21.8206 9.94395L16.8172 5.51741V2.49923C16.8172 2.18505 16.529 1.94241 16.1716 1.94241C15.8371 1.94241 15.5605 2.18508 15.5605 2.49923V4.41026L11.4332 0.752881C11.3067 0.640205 11.1565 0.579529 11.0067 0.579529C10.8338 0.579529 10.6838 0.642359 10.5571 0.752881L0.192834 9.88327C-0.0558173 10.1021 -0.0722815 10.4531 0.192834 10.6546C0.423296 10.8886 0.820269 10.8734 1.06892 10.6546L11.0067 1.92071L20.9214 10.737C21.0247 10.828 21.175 10.88 21.371 10.88C21.5439 10.88 21.6937 10.828 21.8206 10.737C22.0513 10.5333 22.0685 10.165 21.8206 9.94395Z"
+          fill="black" />
+      </svg>
       Home
     </a>
     <a href="tags.html">
-      <?xml version="1.0" encoding="iso-8859-1"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --><svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g><g><path d="M507.063,249.816L262.244,4.892C259.113,1.759,254.867,0,250.439,0H16.742C7.524,0,0.05,7.474,0.05,16.692v233.692
+      <?xml version="1.0" encoding="iso-8859-1"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --><svg
+        fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+        <g>
+          <g>
+            <path d="M507.063,249.816L262.244,4.892C259.113,1.759,254.867,0,250.439,0H16.742C7.524,0,0.05,7.474,0.05,16.692v233.692
         c0,4.427,1.758,8.671,4.886,11.8l244.825,244.925c6.52,6.521,17.091,6.521,23.608,0.002L507.061,273.42
         C513.579,266.903,513.58,256.334,507.063,249.816z M261.569,471.699L33.435,243.472V33.385h210.088l228.132,228.23
-        L261.569,471.699z"/></g></g><g><g><path d="M116.896,66.769c-27.612,0-50.077,22.464-50.077,50.077s22.464,50.077,50.077,50.077s50.077-22.464,50.077-50.077
+        L261.569,471.699z" />
+          </g>
+        </g>
+        <g>
+          <g>
+            <path d="M116.896,66.769c-27.612,0-50.077,22.464-50.077,50.077s22.464,50.077,50.077,50.077s50.077-22.464,50.077-50.077
         S144.508,66.769,116.896,66.769z M116.896,133.538c-9.204,0-16.692-7.488-16.692-16.692s7.488-16.692,16.692-16.692
-        c9.204,0,16.692,7.488,16.692,16.692S126.1,133.538,116.896,133.538z"/></g></g></svg>
+        c9.204,0,16.692,7.488,16.692,16.692S126.1,133.538,116.896,133.538z" />
+          </g>
+        </g>
+      </svg>
       Tags
     </a>
     <a href="atualizar-dados.html">
-      <?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --><svg width="800px" height="800px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>profile [#1341]</title><desc>Created with Sketch.</desc><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Dribbble-Light-Preview" transform="translate(-180.000000, -2159.000000)" fill="#000000"><g id="icons" transform="translate(56.000000, 160.000000)"><path d="M134,2008.99998 C131.783496,2008.99998 129.980955,2007.20598 129.980955,2004.99998 C129.980955,2002.79398 131.783496,2000.99998 134,2000.99998 C136.216504,2000.99998 138.019045,2002.79398 138.019045,2004.99998 C138.019045,2007.20598 136.216504,2008.99998 134,2008.99998 M137.775893,2009.67298 C139.370449,2008.39598 140.299854,2006.33098 139.958235,2004.06998 C139.561354,2001.44698 137.368965,1999.34798 134.722423,1999.04198 C131.070116,1998.61898 127.971432,2001.44898 127.971432,2004.99998 C127.971432,2006.88998 128.851603,2008.57398 130.224107,2009.67298 C126.852128,2010.93398 124.390463,2013.89498 124.004634,2017.89098 C123.948368,2018.48198 124.411563,2018.99998 125.008391,2018.99998 C125.519814,2018.99998 125.955881,2018.61598 126.001095,2018.10898 C126.404004,2013.64598 129.837274,2010.99998 134,2010.99998 C138.162726,2010.99998 141.595996,2013.64598 141.998905,2018.10898 C142.044119,2018.61598 142.480186,2018.99998 142.991609,2018.99998 C143.588437,2018.99998 144.051632,2018.48198 143.995366,2017.89098 C143.609537,2013.89498 141.147872,2010.93398 137.775893,2009.67298" id="profile-[#1341]"></path></g></g></g></svg>
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --><svg
+        width="800px" height="800px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>profile [#1341]</title>
+        <desc>Created with Sketch.</desc>
+        <defs></defs>
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -2159.000000)" fill="#000000">
+            <g id="icons" transform="translate(56.000000, 160.000000)">
+              <path
+                d="M134,2008.99998 C131.783496,2008.99998 129.980955,2007.20598 129.980955,2004.99998 C129.980955,2002.79398 131.783496,2000.99998 134,2000.99998 C136.216504,2000.99998 138.019045,2002.79398 138.019045,2004.99998 C138.019045,2007.20598 136.216504,2008.99998 134,2008.99998 M137.775893,2009.67298 C139.370449,2008.39598 140.299854,2006.33098 139.958235,2004.06998 C139.561354,2001.44698 137.368965,1999.34798 134.722423,1999.04198 C131.070116,1998.61898 127.971432,2001.44898 127.971432,2004.99998 C127.971432,2006.88998 128.851603,2008.57398 130.224107,2009.67298 C126.852128,2010.93398 124.390463,2013.89498 124.004634,2017.89098 C123.948368,2018.48198 124.411563,2018.99998 125.008391,2018.99998 C125.519814,2018.99998 125.955881,2018.61598 126.001095,2018.10898 C126.404004,2013.64598 129.837274,2010.99998 134,2010.99998 C138.162726,2010.99998 141.595996,2013.64598 141.998905,2018.10898 C142.044119,2018.61598 142.480186,2018.99998 142.991609,2018.99998 C143.588437,2018.99998 144.051632,2018.48198 143.995366,2017.89098 C143.609537,2013.89498 141.147872,2010.93398 137.775893,2009.67298"
+                id="profile-[#1341]"></path>
+            </g>
+          </g>
+        </g>
+      </svg>
       Atualizar Dados
     </a>
   </div>
 
   <div class="menu-admin">
-    <a href="\"  class="active">
-      <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.3734 9.50842C18.0161 9.50842 17.7394 9.7511 17.7394 10.0674V17.7028H13.2432V14.5849C13.2432 14.2925 12.9665 14.0368 12.632 14.0368H9.38108C9.02347 14.0368 8.73546 14.2924 8.73546 14.5849V17.7028H4.2506V10.3209C4.2506 10.0262 3.97416 9.7814 3.61655 9.7814C3.28231 9.7814 3.00562 10.0262 3.00562 10.3209V18.2618C3.00562 18.5565 3.28231 18.8013 3.61655 18.8013H9.38108C9.71532 18.8013 9.99202 18.5565 9.99202 18.2618V15.1439H11.9979V18.2618C11.9979 18.5565 12.2746 18.8013 12.632 18.8013H18.3734C18.7077 18.8013 18.9844 18.5565 18.9844 18.2618V10.0674C18.9844 9.75113 18.7077 9.50842 18.3734 9.50842Z" fill="black"/><path d="M21.8206 9.94395L16.8172 5.51741V2.49923C16.8172 2.18505 16.529 1.94241 16.1716 1.94241C15.8371 1.94241 15.5605 2.18508 15.5605 2.49923V4.41026L11.4332 0.752881C11.3067 0.640205 11.1565 0.579529 11.0067 0.579529C10.8338 0.579529 10.6838 0.642359 10.5571 0.752881L0.192834 9.88327C-0.0558173 10.1021 -0.0722815 10.4531 0.192834 10.6546C0.423296 10.8886 0.820269 10.8734 1.06892 10.6546L11.0067 1.92071L20.9214 10.737C21.0247 10.828 21.175 10.88 21.371 10.88C21.5439 10.88 21.6937 10.828 21.8206 10.737C22.0513 10.5333 22.0685 10.165 21.8206 9.94395Z" fill="black"/></svg>
+    <a href="\" class="active">
+      <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M18.3734 9.50842C18.0161 9.50842 17.7394 9.7511 17.7394 10.0674V17.7028H13.2432V14.5849C13.2432 14.2925 12.9665 14.0368 12.632 14.0368H9.38108C9.02347 14.0368 8.73546 14.2924 8.73546 14.5849V17.7028H4.2506V10.3209C4.2506 10.0262 3.97416 9.7814 3.61655 9.7814C3.28231 9.7814 3.00562 10.0262 3.00562 10.3209V18.2618C3.00562 18.5565 3.28231 18.8013 3.61655 18.8013H9.38108C9.71532 18.8013 9.99202 18.5565 9.99202 18.2618V15.1439H11.9979V18.2618C11.9979 18.5565 12.2746 18.8013 12.632 18.8013H18.3734C18.7077 18.8013 18.9844 18.5565 18.9844 18.2618V10.0674C18.9844 9.75113 18.7077 9.50842 18.3734 9.50842Z"
+          fill="black" />
+        <path
+          d="M21.8206 9.94395L16.8172 5.51741V2.49923C16.8172 2.18505 16.529 1.94241 16.1716 1.94241C15.8371 1.94241 15.5605 2.18508 15.5605 2.49923V4.41026L11.4332 0.752881C11.3067 0.640205 11.1565 0.579529 11.0067 0.579529C10.8338 0.579529 10.6838 0.642359 10.5571 0.752881L0.192834 9.88327C-0.0558173 10.1021 -0.0722815 10.4531 0.192834 10.6546C0.423296 10.8886 0.820269 10.8734 1.06892 10.6546L11.0067 1.92071L20.9214 10.737C21.0247 10.828 21.175 10.88 21.371 10.88C21.5439 10.88 21.6937 10.828 21.8206 10.737C22.0513 10.5333 22.0685 10.165 21.8206 9.94395Z"
+          fill="black" />
+      </svg>
       Home
     </a>
     <a href="tags.html">
-      <?xml version="1.0" encoding="iso-8859-1"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --><svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g><g><path d="M507.063,249.816L262.244,4.892C259.113,1.759,254.867,0,250.439,0H16.742C7.524,0,0.05,7.474,0.05,16.692v233.692
+      <?xml version="1.0" encoding="iso-8859-1"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --><svg
+        fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+        <g>
+          <g>
+            <path d="M507.063,249.816L262.244,4.892C259.113,1.759,254.867,0,250.439,0H16.742C7.524,0,0.05,7.474,0.05,16.692v233.692
         c0,4.427,1.758,8.671,4.886,11.8l244.825,244.925c6.52,6.521,17.091,6.521,23.608,0.002L507.061,273.42
         C513.579,266.903,513.58,256.334,507.063,249.816z M261.569,471.699L33.435,243.472V33.385h210.088l228.132,228.23
-        L261.569,471.699z"/></g></g><g><g><path d="M116.896,66.769c-27.612,0-50.077,22.464-50.077,50.077s22.464,50.077,50.077,50.077s50.077-22.464,50.077-50.077
+        L261.569,471.699z" />
+          </g>
+        </g>
+        <g>
+          <g>
+            <path d="M116.896,66.769c-27.612,0-50.077,22.464-50.077,50.077s22.464,50.077,50.077,50.077s50.077-22.464,50.077-50.077
         S144.508,66.769,116.896,66.769z M116.896,133.538c-9.204,0-16.692-7.488-16.692-16.692s7.488-16.692,16.692-16.692
-        c9.204,0,16.692,7.488,16.692,16.692S126.1,133.538,116.896,133.538z"/></g></g></svg>
+        c9.204,0,16.692,7.488,16.692,16.692S126.1,133.538,116.896,133.538z" />
+          </g>
+        </g>
+      </svg>
       Tags
     </a>
     <a href="atualizar-dados.html">
-      <?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --><svg width="800px" height="800px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>profile [#1341]</title><desc>Created with Sketch.</desc><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Dribbble-Light-Preview" transform="translate(-180.000000, -2159.000000)" fill="#000000"><g id="icons" transform="translate(56.000000, 160.000000)"><path d="M134,2008.99998 C131.783496,2008.99998 129.980955,2007.20598 129.980955,2004.99998 C129.980955,2002.79398 131.783496,2000.99998 134,2000.99998 C136.216504,2000.99998 138.019045,2002.79398 138.019045,2004.99998 C138.019045,2007.20598 136.216504,2008.99998 134,2008.99998 M137.775893,2009.67298 C139.370449,2008.39598 140.299854,2006.33098 139.958235,2004.06998 C139.561354,2001.44698 137.368965,1999.34798 134.722423,1999.04198 C131.070116,1998.61898 127.971432,2001.44898 127.971432,2004.99998 C127.971432,2006.88998 128.851603,2008.57398 130.224107,2009.67298 C126.852128,2010.93398 124.390463,2013.89498 124.004634,2017.89098 C123.948368,2018.48198 124.411563,2018.99998 125.008391,2018.99998 C125.519814,2018.99998 125.955881,2018.61598 126.001095,2018.10898 C126.404004,2013.64598 129.837274,2010.99998 134,2010.99998 C138.162726,2010.99998 141.595996,2013.64598 141.998905,2018.10898 C142.044119,2018.61598 142.480186,2018.99998 142.991609,2018.99998 C143.588437,2018.99998 144.051632,2018.48198 143.995366,2017.89098 C143.609537,2013.89498 141.147872,2010.93398 137.775893,2009.67298" id="profile-[#1341]"></path></g></g></g></svg>
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --><svg
+        width="800px" height="800px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <title>profile [#1341]</title>
+        <desc>Created with Sketch.</desc>
+        <defs></defs>
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -2159.000000)" fill="#000000">
+            <g id="icons" transform="translate(56.000000, 160.000000)">
+              <path
+                d="M134,2008.99998 C131.783496,2008.99998 129.980955,2007.20598 129.980955,2004.99998 C129.980955,2002.79398 131.783496,2000.99998 134,2000.99998 C136.216504,2000.99998 138.019045,2002.79398 138.019045,2004.99998 C138.019045,2007.20598 136.216504,2008.99998 134,2008.99998 M137.775893,2009.67298 C139.370449,2008.39598 140.299854,2006.33098 139.958235,2004.06998 C139.561354,2001.44698 137.368965,1999.34798 134.722423,1999.04198 C131.070116,1998.61898 127.971432,2001.44898 127.971432,2004.99998 C127.971432,2006.88998 128.851603,2008.57398 130.224107,2009.67298 C126.852128,2010.93398 124.390463,2013.89498 124.004634,2017.89098 C123.948368,2018.48198 124.411563,2018.99998 125.008391,2018.99998 C125.519814,2018.99998 125.955881,2018.61598 126.001095,2018.10898 C126.404004,2013.64598 129.837274,2010.99998 134,2010.99998 C138.162726,2010.99998 141.595996,2013.64598 141.998905,2018.10898 C142.044119,2018.61598 142.480186,2018.99998 142.991609,2018.99998 C143.588437,2018.99998 144.051632,2018.48198 143.995366,2017.89098 C143.609537,2013.89498 141.147872,2010.93398 137.775893,2009.67298"
+                id="profile-[#1341]"></path>
+            </g>
+          </g>
+        </g>
+      </svg>
       Atualizar Dados
     </a>
     <a href="gerenciar-usuarios.html">
-      <?xml version="1.0" encoding="iso-8859-1"?><svg height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200.688 200.688" xml:space="preserve"><g><path style="fill:#010002" d="M190.985,111.644l-0.293-0.347c-1.399-1.729-4.459-4.187-8.922-5.891l-0.684-0.208
+      <?xml version="1.0" encoding="iso-8859-1"?><svg height="800px" width="800px" version="1.1" id="Capa_1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200.688 200.688"
+        xml:space="preserve">
+        <g>
+          <path style="fill:#010002" d="M190.985,111.644l-0.293-0.347c-1.399-1.729-4.459-4.187-8.922-5.891l-0.684-0.208
         c-4.649-2.144-8.861-3.582-10.096-3.987c-0.97-0.319-1.782-0.666-2.43-0.948c-5.128-2.53-5.708-4.008-5.791-4.237l-0.233-0.544
         l0.197-0.49c3.811-4.746,6.488-10.275,7.508-15.486l0.15-0.354c1.052-1.342,1.725-2.91,1.993-4.638
         c1.213-4.384,1.263-7.605,0.175-9.863l-0.097-0.2l0.05-0.222c1.353-5.665,2.656-16.277-3.847-23.681
@@ -128,7 +218,9 @@
         c9.334,2.759,13.682,7.924,14.48,8.958c7.508,8.521,5.504,21.344,3.643,28.234c-0.218,0.795-0.086,1.621,0.369,2.294l0.415,0.533
         c0.684,0.916,0.941,3.983-0.587,9.663c-0.308,1.854-0.998,3.357-2.008,4.355c-0.369,0.394-0.608,0.909-0.712,1.492
         c-2.541,14.87-15.869,31.497-29.905,31.497c-11.928,0-25.528-15.303-27.983-31.487c-0.082-0.583-0.322-1.109-0.744-1.568
-        c-1.024-1.056-1.671-2.577-2.069-4.839C43.437,59.479,43.315,56.054,44.249,54.626z"/></g></svg>
+        c-1.024-1.056-1.671-2.577-2.069-4.839C43.437,59.479,43.315,56.054,44.249,54.626z" />
+        </g>
+      </svg>
       Gerenciar Usuarios
     </a>
   </div>
@@ -205,14 +297,12 @@
 
   <footer>
     <img id="footer-image" src="assets/img/Guaxinim Raivoso.png" class="guaxinimraivoso" alt="Guaxinim Raivoso" />
-    <p id="footer-text">Feito por um bando de Guaxinins Raivosos</p>   
+    <p id="footer-text">Feito por um bando de Guaxinins Raivosos</p>
   </footer>
 
   <script src="assets/js/menus.js"></script>
   <script src="assets/js/footer.js"></script>
   <script src="assets/js/home.js"></script>
-  <script>
-    console.log(localStorage.getItem('myCookie'))
-  </script>
 </body>
+
 </html>

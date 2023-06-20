@@ -55,6 +55,7 @@ body{
   align-items: center;
   border-bottom: 1px solid rgba(115, 115, 115, 0.4);
   height: 64px;
+  cursor: pointer;
 }
 
 .tagscontainer .tagcontent .tagcard .viewcontainer{
@@ -65,6 +66,10 @@ body{
   height: 39px;
   background-color: #EB3D3D;
   border-radius: 15px;
+}
+
+.tagscontainer .tagcontent .tagcard.active .viewcontainer{
+  background-color: #26B11A;
 }
 
 .tagscontainer .paginationcontainer{
@@ -81,14 +86,14 @@ body{
   font-size: 20px;
   line-height: 27px;
   color: #000000;
+  cursor: pointer;
 }
 
-.tagscontainer .paginationcontainer a p:first-of-type, .tagscontainer .paginationcontainer a p:last-of-type{
-  display: none;
-}
-
-.tagscontainer .paginationcontainer a.active p:first-of-type, .tagscontainer .paginationcontainer a.active p:last-of-type{
-  display: block;
+.tagscontainer .paginationcontainer .numberscontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
 }
 
 .tags-info{
@@ -135,22 +140,44 @@ body{
   padding: 43px 16px 16px;
 }
 
-.tags-info .tag-info-card .tag-info-card-body a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-
-  height: 35px;
-  background: #737373;
-  border: 1px solid #CDCDCD;
-  border-radius: 5px;
-  padding: 0 22px;
-
+.tags-info .tag-info-card .tag-info-card-body .alert{
+  display: none;
   font-weight: bold;
   font-size: 15px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
+}
 
-  cursor: pointer;
+.tags-info .tag-info-card .tag-info-card-body .alert.active{
+  display: block;
+}
+
+.tags-info .tag-info-card .tag-info-card-body .btn{
+  margin-top: 20px;
+}
+
+.tags-info .tag-info-card .tag-info-card-body .tags-selecionadas-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.tags-info .tag-info-card .tag-info-card-body .tags-selecionadas-container button{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #26B11A;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  transition: all .2s ease-in-out;
+  height: 30px;
+}
+
+.tags-info .tag-info-card .tag-info-card-body .tags-selecionadas-container button:hover{
+  border: 2px solid #EB3D3D;
 }

@@ -128,93 +128,15 @@
     </div>
 
     <div class="tagcontent">
-      <div class="tagcard">
-        <p>POO</p>
-        <div class="viewcontainer">
-          <img src="assets/img/view.png" alt="">
-        </div>
-      </div>
-
-      <div class="tagcard">
-        <p>C</p>
-        <div class="viewcontainer">
-          <img src="assets/img/view.png" alt="">
-        </div>
-      </div>
-
-      <div class="tagcard">
-        <p>Empreendedorismo</p>
-        <div class="viewcontainer">
-          <img src="assets/img/view.png" alt="">
-        </div>
-      </div>
-
-      <div class="tagcard">
-        <p>PLA</p>
-        <div class="viewcontainer">
-          <img src="assets/img/view.png" alt="">
-        </div>
-      </div>
-
-      <div class="tagcard">
-        <p>LABD</p>
-        <div class="viewcontainer">
-          <img src="assets/img/view.png" alt="">
-        </div>
-      </div>
-
-      <div class="tagcard">
-        <p>Java</p>
-        <div class="viewcontainer">
-          <img src="assets/img/view.png" alt="">
-        </div>
-      </div>
-
-      <div class="tagcard">
-        <p>Eng. Software</p>
-        <div class="viewcontainer">
-          <img src="assets/img/view.png" alt="">
-        </div>
-      </div>
+      <!-- Os cards contendo o nome das tags são inseridos aqui -->
     </div>
 
     <div class="paginationcontainer">
       <a href="" title="Primeira página"><<</a>
       <a href="" title="Anterior"><</a>
-      <a href="" class="active">
-        <p>[</p>
-        <p class="pagenumber">1</p>
-        <p>]</p>
-      </a>
-      <a href="">
-        <p>[</p>
-        <p class="pagenumber">2</p>
-        <p>]</p>
-      </a>
-      <a href="">
-        <p>[</p>
-        <p class="pagenumber">3</p>
-        <p>]</p>
-      </a>
-      <a href="">
-        <p>[</p>
-        <p class="pagenumber">4</p>
-        <p>]</p>
-      </a>
-      <a href="">
-        <p>[</p>
-        <p class="pagenumber">5</p>
-        <p>]</p>
-      </a>
-      <a href="">
-        <p>[</p>
-        <p class="pagenumber">6</p>
-        <p>]</p>
-      </a>
-      <a href="">
-        <p>[</p>
-        <p class="pagenumber">7</p>
-        <p>]</p>
+      <div class="numberscontainer">
+        <!-- Os numeros são inseridos aqui -->
+      </div>
       </a>
       <a href=""  title="Próxima">></a>
       <a href="" title="Última Página">>></a>
@@ -225,17 +147,12 @@
     <div class="tag-info-card">
       <div class="tag-info-card-head">Tags fixadas</div>
       <div class="tag-info-card-body">
-        <p>Assista tags para selecionar sua lista de perguntas.</p>
-        <a href="">Fixar a uma tag</a>
+        <p class="alert">Só é possível fixar até 5 tags</p>
+        <div class="tags-selecionadas-container">
+          <!-- As tags selecionadas são inseridas aqui -->
+        </div>
+        <button class="btn">Pesquisar posts</button>
       </div>
-    </div>
-
-    <div class="tag-info-card">
-      <div class="tag-info-card-head">Tags ignoradas</div>
-      <div class="tag-info-card-body">
-        <a href="">Ignorar uma tag</a>
-      </div>
-      
     </div>
   </div>
 
@@ -246,5 +163,10 @@
 
   <script src="assets/js/menus.js"></script>
   <script src="assets/js/footer.js"></script>
+  <script src="assets/js/tags.js"></script>
+  <script>
+    console.log(localStorage.getItem('name'))
+    console.log(localStorage.getItem('myCookie'))
+  </script>
 </body>
 </html>
