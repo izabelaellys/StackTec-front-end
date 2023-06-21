@@ -177,6 +177,55 @@ nav .logadosection a:nth-child(2){
   margin-right: 10px;
 }
 
+/* Estilos para o funcionamento do modal */
+.modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal.active{
+  display: flex;
+}
+
+.modal .modal-content {
+  background-color: #FFFFFF;
+  padding: 25px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 40px;
+  border-radius: 15px;
+}
+
+.modal .modal-content .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal .modal-content .close:hover,
+.modal .modal-content .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal .modal-content .mensagemmodal p{
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  margin-right: 40px;
+}
+
 /*estilos para o rodapé */
 footer {
   background: linear-gradient(to right, #960018, #d1001c);

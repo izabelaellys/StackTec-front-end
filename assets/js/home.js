@@ -1,8 +1,11 @@
 const questionCardContainer = document.querySelector('.questioncardcontainer')
 
 if (!localStorage.getItem('myCookie')) {
+  document.querySelector('.mensagemmodal').innerHTML = '<p>Por favor, faça login para você possa acessar todo o conteúdo dos posts</p>'
+
   // Remove as tags
   document.querySelector('.tagcontainer').classList.remove('active')
+  
 
 
   var requestOptions = {
@@ -15,8 +18,15 @@ if (!localStorage.getItem('myCookie')) {
     .then(result => {
       questionCardContainer.innerHTML += ''
       result.forEach(item => {
-        questionCardContainer.innerHTML += `<div class="questioncard"><div class="questioncontent"><a href="/">${item.titulo}</a></div></div>`
+        questionCardContainer.innerHTML += `<div class="questioncard"><div><p>- votos</p><p class="resposta">- resposta</p></div><div class="questioncontent"><a href="/">${item.titulo}</a></div></div>`
       });
+
+      const allQuestionCard = document.querySelectorAll('.questioncard')
+      allQuestionCard.forEach(item => {
+        item.addEventListener("click", () => {
+          document.querySelector('.modal').classList.add('active')
+        })
+      })
     })
     .catch(error => console.log('error', error));
 } else {
@@ -46,4 +56,7 @@ if (!localStorage.getItem('myCookie')) {
       buttonContainer.innerHTML += '<a href="/tags.html" class="tag-last-button">...</a>'
     })
     .catch(error => console.log('error', error));
+
+  // Insere posts
+  // ...
 }
