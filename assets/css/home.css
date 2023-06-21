@@ -133,3 +133,27 @@ body.active{
   color: #000000;
   margin: 18px 0;
 }
+
+.postcontainer .paginationcontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
+}
+
+.postcontainer .paginationcontainer a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 27px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.postcontainer .paginationcontainer .numberscontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
+}

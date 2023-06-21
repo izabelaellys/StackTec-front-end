@@ -218,12 +218,11 @@
     <div class="postaction">
       <div class="filter">
         <p>Filtrar: </p>
-        <button class="filterbutton active">Relevantes</button>
-        <button class="filterbutton">Recentes</button>
-        <button class="filterbutton">Mais antigos</button>
-        <button class="filterbutton">Respondidos</button>
+        <button class="filterbutton active" data-value="recentes">Recentes</button>
+        <button class="filterbutton" data-value="maisvotados">Mais votados</button>
+        <button class="filterbutton" data-value="antigos">Antigos</button>
       </div>
-      <a href="" class="btn">Faça uma pergunta</a>
+      <a href="editor.html" class="btn">Faça uma pergunta</a>
     </div>
 
     <div class="questioncardcontainer">
@@ -243,7 +242,16 @@
       <!-- Cards dos posts são inseridos aqui -->
     </div>
 
-
+    <div class="paginationcontainer">
+      <a href="/index.html" title="Primeira página"><<</a>
+      <a href="" title="Anterior" class="paginacaoAnterior"><</a>
+      <div class="numberscontainer">
+        <!-- Os numeros são inseridos aqui -->
+      </div>
+      </a>
+      <a href=""  title="Próxima" class="paginacaoProxima">></a>
+      <a href="" title="Última Página" class="paginacaoUltima">>></a>
+    </div>
   </div>
 
   <div class="modal">
