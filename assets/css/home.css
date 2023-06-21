@@ -34,10 +34,12 @@ body.active{
   margin-left: 10px;
 }
 
-.btn-tag{
+.btn-tag, .tag-last-button{
+  display: flex;
+  align-items: center;
   background: #CDCDCD;
   border-radius: 5px;
-  padding: 8px 10px;
+  padding: 0px 10px;
   height: 32px;
   border: none;
   cursor: pointer;

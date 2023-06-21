@@ -5,7 +5,7 @@ let atualPage = !urlParams.has('page') ? 1 : urlParams.get('page')
 const itemsByPage = 2
 
 var myHeaders = new Headers();
-myHeaders.append("Cookie", "bezkoder=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBmYXRlYy5zcC5nb3YuYnIiLCJpYXQiOjE2ODczMDMyMDUsImV4cCI6MTY4NzM4OTYwNX0.OlPlPeE2VUoTTDLFz2t7u8A36LnDgHIACwO5e58VyTLTCntWAoxk8BmMYDNVz79QgE_ymb6gUv3qhf3dCsVhKw; Path=/api; Max-Age=60; Expires=Tue, 20 Jun 2023 23:21:05 GMT; HttpOnly");
+myHeaders.append("Cookie", localStorage.getItem('myCookie'));
 
 var requestOptions = {
   method: 'GET',
