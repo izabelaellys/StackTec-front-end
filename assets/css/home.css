@@ -57,7 +57,7 @@ body.active{
   max-width: 713px;
   width: 100%;
   padding: 43px 15px 43px;
-  margin: 122px auto 0;
+  margin: 122px auto 0 0;
 }
 
 .postcontainer .postaction{

@@ -13,6 +13,8 @@ if (!localStorage.getItem('myCookie')) {
   document.querySelector('.tagcontainer').classList.remove('active')
   // Remove o post action
   document.querySelector('.postaction').classList.remove('active')
+  // Remove o padding do body
+  document.querySelector('body').classList.remove('active')
 
 
   var requestOptions = {
@@ -67,6 +69,7 @@ if (!localStorage.getItem('myCookie')) {
 
   // Insere posts
   document.querySelector('.postaction').classList.add('active')
+  document.querySelector('body').classList.add('active')
   let orderBy = 'recentes' //possiveis (antigos, maisvotados e recentes)
   const allFilterButton = document.querySelectorAll('.filterbutton')
   allFilterButton.forEach(item => {
