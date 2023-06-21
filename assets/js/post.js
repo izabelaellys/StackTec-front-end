@@ -7,7 +7,7 @@ if (urlParams.has('id')) {
 
   //Faz a requisição do post
   var myHeaders = new Headers();
-  myHeaders.append("Cookie", "bezkoder=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huYmFyZGVlbjE4QGZhdGVjLnNwLmdvdi5iciIsImlhdCI6MTY4NzA0MTM0MywiZXhwIjoxNjg3MTI3NzQzfQ.hdE-4eU7v1syb-JmODMxzbMduXmGB_opNzwSR9iMKPbQqFyXWa_NrNfDdf71AXwPv-YXaxxIu29kWKt6f8q1pg; Path=/api; Max-Age=60; Expires=Sat, 17 Jun 2023 22:36:43 GMT; HttpOnly");
+  myHeaders.append("Cookie", "bezkoder=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huYmFyZGVlbjE4QGZhdGVjLnNwLmdvdi5iciIsImlhdCI6MTY4NzMwODQ0NCwiZXhwIjoxNjg3Mzk0ODQ0fQ.IFv9jMknzll1Z6WI5_vjwWLpGP-DmZraD_J6XF8xcSQLlK_ccjIjUH2g2a20Va21SDt-13_ON9Ug5PbMS0evaw; Path=/api; Max-Age=60; Expires=Wed, 21 Jun 2023 00:48:24 GMT; HttpOnly");
 
   var requestOptions = {
     method: 'GET',

@@ -1,3 +1,7 @@
+body.active{
+  padding:  0px 60px 0px 326px;
+}
+
 .tagcontainer{
   position: fixed;
   width: 100%;
@@ -7,10 +11,14 @@
   background: #E8E4E4;
   padding: 0 82px;
 
-  display: flex;
+  display: none;
   align-items: center;
 
   z-index: 99;
+}
+
+.tagcontainer.active{
+  display: flex;
 }
 
 .tagcontainer p{
@@ -44,14 +52,20 @@
 .postcontainer{
   display: flex;
   flex-direction: column;
-  width: 713px;
+  max-width: 713px;
+  width: 100%;
   padding: 43px 15px 43px;
   margin: 122px auto 0;
 }
 
 .postcontainer .postaction{
-  display: flex;
+  display: none;
   justify-content: space-between;
+  column-gap: 40px;
+}
+
+.postcontainer .postaction.active{
+  display: flex;
 }
 
 .postcontainer .postaction .filter{
@@ -85,7 +99,7 @@
 
 .postcontainer .questioncard{
   display: flex;
-  width: 683.74px;
+  width: 100%;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   margin: 37px 0 0;
