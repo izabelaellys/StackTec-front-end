@@ -1,42 +1,36 @@
 const loginForm = document.getElementById("formLogin");
-const cookieValue = null;
-loginForm.addEventListener("submit", function(event) {
+
+loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
-    const formData = new FormData(loginForm);
+  const formData = new FormData(loginForm);
 
-    // Convert form data to JSON object
-    const jsonObject = {};
-    for (const [key, value] of formData.entries()) {
-      jsonObject[key] = value;
-    }
+  // Convert form data to JSON object
+  const jsonObject = {};
+  for (const [key, value] of formData.entries()) {
+    jsonObject[key] = value;
+  }
+        
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
 
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: JSON.stringify(jsonObject),
+    redirect: 'follow'
+  };
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://192.168.0.10:8080/auth/signin');
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          // Successful request
-          loginForm.reset();
-
-          /*const setCookieHeader = xhr.getResponseHeader('Set-Cookie');
-          if (setCookieHeader) {
-            // Extract the cookie value
-            const cookieValue = setCookieHeader.split(';')[0];
-
-            // Store the cookie value in memory, e.g., in a variable or localStorage
-            // For example, using localStorage:
-            localStorage.setItem('myCookie', cookieValue);
-          }*/
-        } else {
-          // Handle request error
-          console.error("Request failed:", xhr.status);
-        }
-      }
-    };
-
-    // Send form data as JSON string
-    xhr.send(JSON.stringify(jsonObject));
+  fetch("http://localhost:8080/auth/signin", requestOptions)
+    .then(response => response.json())
+    .then(result => {
+      // Salva os dados da requisição no localstorage
+      localStorage.setItem('myCookie', result.cookie);
+      localStorage.setItem('name', result.nome)      
+      localStorage.setItem('email', result.email)
+      localStorage.setItem('roles', result.roles[0])
+      // Redireciona para a página incial
+      window.location.href = "/";
+    })
+    .catch(error => console.log('error', error));
 });

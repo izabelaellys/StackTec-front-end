@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>StackTec</title>
+  <title>StackTec - Listagem de posts por tags</title>
   <link rel="stylesheet" type="text/css" href="assets/css/common.css">
   <link rel="stylesheet" type="text/css" href="assets/css/home.css">
 </head>
-
 <body>
   <nav>
     <a href="/"><img src="assets/img/logo.png" alt="logo"></a>
@@ -40,15 +38,9 @@
       <button class="btn" id="logout">Sair</button>
     </div>
   </nav>
-  <div class="tagcontainer">
-    <p>Principais tags:</p>
-    <div class="buttoncontainer">
-      <!-- Aqui são inseridos os botões de tags -->
-    </div>
-  </div>
 
   <div class="menu">
-    <a href="\" class="active">
+    <a href="\">
       <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M18.3734 9.50842C18.0161 9.50842 17.7394 9.7511 17.7394 10.0674V17.7028H13.2432V14.5849C13.2432 14.2925 12.9665 14.0368 12.632 14.0368H9.38108C9.02347 14.0368 8.73546 14.2924 8.73546 14.5849V17.7028H4.2506V10.3209C4.2506 10.0262 3.97416 9.7814 3.61655 9.7814C3.28231 9.7814 3.00562 10.0262 3.00562 10.3209V18.2618C3.00562 18.5565 3.28231 18.8013 3.61655 18.8013H9.38108C9.71532 18.8013 9.99202 18.5565 9.99202 18.2618V15.1439H11.9979V18.2618C11.9979 18.5565 12.2746 18.8013 12.632 18.8013H18.3734C18.7077 18.8013 18.9844 18.5565 18.9844 18.2618V10.0674C18.9844 9.75113 18.7077 9.50842 18.3734 9.50842Z"
@@ -103,7 +95,7 @@
   </div>
 
   <div class="menu-admin">
-    <a href="\" class="active">
+    <a href="\">
       <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M18.3734 9.50842C18.0161 9.50842 17.7394 9.7511 17.7394 10.0674V17.7028H13.2432V14.5849C13.2432 14.2925 12.9665 14.0368 12.632 14.0368H9.38108C9.02347 14.0368 8.73546 14.2924 8.73546 14.5849V17.7028H4.2506V10.3209C4.2506 10.0262 3.97416 9.7814 3.61655 9.7814C3.28231 9.7814 3.00562 10.0262 3.00562 10.3209V18.2618C3.00562 18.5565 3.28231 18.8013 3.61655 18.8013H9.38108C9.71532 18.8013 9.99202 18.5565 9.99202 18.2618V15.1439H11.9979V18.2618C11.9979 18.5565 12.2746 18.8013 12.632 18.8013H18.3734C18.7077 18.8013 18.9844 18.5565 18.9844 18.2618V10.0674C18.9844 9.75113 18.7077 9.50842 18.3734 9.50842Z"
@@ -241,13 +233,6 @@
     </div>
   </div>
 
-  <div class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="mensagemmodal"></div>
-    </div>
-  </div>
-
   <footer>
     <img id="footer-image" src="assets/img/Guaxinim Raivoso.png" class="guaxinimraivoso" alt="Guaxinim Raivoso" />
     <p id="footer-text">Feito por um bando de Guaxinins Raivosos</p>
@@ -255,13 +240,5 @@
 
   <script src="assets/js/menus.js"></script>
   <script src="assets/js/footer.js"></script>
-  <script src="assets/js/home.js"></script>
-  <script src="assets/js/modal.js"></script>
-  <script>
-    console.log(localStorage.getItem('name'))
-    console.log(localStorage.getItem('myCookie'))
-    
-  </script>
 </body>
-
 </html>

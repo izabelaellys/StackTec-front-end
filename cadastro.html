@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>StackTec - Cadastro </title>
   <link rel="stylesheet" type="text/css" href="assets/css/common.css">
   <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+  <script>
+    if (localStorage.getItem('name')) {
+      window.location.href = "/";
+    }
+  </script>
 </head>
+
 <body>
   <div class="formscontainer">
     <img src="assets/img/logo.png" class="logo" alt="Logo StackTec" />
@@ -20,8 +27,8 @@
       <div class="form-group">
         <label for="email">E-mail:</label>
         <input type="email" id="email" name="email" required>
-        
       </div>
+      <p id="email-error" class="forms-error">O email precisa ter o domínio @fatec.sp.gov.br</p>
       <div class="form-group">
         <label for="semestre">Semestre:</label>
         <select id="semestre" name="semestre" required>
@@ -33,11 +40,11 @@
           <option value="SEM_5">5º semestre</option>
           <option value="SEM_6">6º semestre</option>
           <option value="SEM_7">7º semestre</option>
-          <option value="SEM_8">8º semestre</option>  
+          <option value="SEM_8">8º semestre</option>
         </select>
-        <div class="form-group">
-          <input type="hidden" type="roles" id="roles" name="roles" value="ROLE_USER">
-        </div>
+        <!-- <div class="form-group">
+          <input type="hidden" type="roles" id="roles" name="roles" value="ROLE_ALUNO">
+        </div> -->
         <div class="form-group">
           <label for="password">Senha:</label>
           <input type="password" id="password" name="password" minlength="6" required>
@@ -46,16 +53,27 @@
           <label for="confirm-password">Confirmar senha:</label>
           <input type="password" id="confirm-password" name="confirm-password" minlength="6" required>
         </div>
+        <p id="password-error" class="forms-error">As duas senhas precisam ser iguais</p>
+        <p id="duplicate-email-error"  class="forms-error">O Email já está em uso</p>
+        <p id="generic-error"  class="forms-error">Desculpa, mas houve algum erro durante a execução do cadastro</p>
         <input type="submit" value="Registrar" class="btn">
       </div>
     </form>
+    <div class='sucess'>
+      <div class="c-loader"></div>
+      <p>Cadastro criado com sucesso, em 5 segundos você será redirecionado para a página inicial ou pode fazer isso
+        manualmente clicando <a href="/">aqui</a></p>
+    </div>
   </div>
 
   <footer>
     <img id="footer-image" src="assets/img/Guaxinim Raivoso.png" class="guaxinimraivoso" alt="Guaxinim Raivoso" />
-    <p id="footer-text">Feito por um bando de Guaxinins Raivosos</p>   
+    <p id="footer-text">Feito por um bando de Guaxinins Raivosos</p>
   </footer>
 
+  <script src="assets/js/cadastro.js"></script>
   <script src="assets/js/footer.js"></script>
+
 </body>
+
 </html>
