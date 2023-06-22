@@ -84,11 +84,12 @@ if (!localStorage.getItem('myCookie')) {
 
 
   var myHeaders2 = new Headers();
-  myHeaders2.append("Cookie", localStorage.getItem('myCookie'));
   myHeaders2.append("Content-Type", "application/json");
+  myHeaders2.append("Cookie", "bezkoder=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBmYXRlYy5zcC5nb3YuYnIiLCJpYXQiOjE2ODczOTE1MzQsImV4cCI6MTY4NzQ3NzkzNH0.pJaKcbywdKYFtZ7TGa4r6Ly44R4H4Kb0PMuuUhb2pRmxqz-BNllUR6jJDhSrqLn1xqZ9SXQAmi_nETQq-lxcFg; Path=/api; Max-Age=60; Expires=Wed, 21 Jun 2023 23:53:14 GMT; HttpOnly");
 
   var requestOptions = {
     method: 'POST',
+    mode: 'cors',
     headers: myHeaders2,
     redirect: 'follow'
   };
