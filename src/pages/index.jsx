@@ -7,7 +7,6 @@ function Home({ result, error }) {
   // Set a cookie
   useEffect(() => {
     // Set the cookie on the frontend
-    cookie.set('myCookie', "bezkoder=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huYmFyZGVlbjE4QGZhdGVjLnNwLmdvdi5iciIsImlhdCI6MTY4NzQ3ODM1MiwiZXhwIjoxNjg3NTY0NzUyfQ.VMgXJd1UakDZ9C_vYNrcjrzlPqyUtsq44q2hvBr6ONV_m14T6dnKalSt8y0uMBfL_9h36yS7AkpVFerkmsaApw; Path=/api; Max-Age=60; Expires=Fri, 23 Jun 2023 00:00:12 GMT; HttpOnly");
     const myCookieValue = cookie.get('myCookie');
     console.log(myCookieValue);
   }, []);
