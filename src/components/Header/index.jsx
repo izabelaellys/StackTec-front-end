@@ -10,7 +10,6 @@ const Header = () => {
   const [logado, setLogado] = useState(false)
 
   useEffect(() => {
-    // cookie.set('name', 'Admin')
     const nameValue = cookie.get('name')
     if(nameValue){ 
       setNome(nameValue)
