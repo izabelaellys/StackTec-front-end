@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../Button"
 import { StyledFormsLogin } from "./styles"
 import axios from "axios"
+import { useRouter } from 'next/router';
+
 
 import cookie from 'js-cookie'
 
 const FormsLogin = () => {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const router = useRouter()
+
+  useEffect(() => {
+    if(cookie.get('myCookie')){
+      router.push('/')
+    }
+  }, [])
 
   const makeLogin = async (e) => {
     e.preventDefault()
@@ -35,9 +44,10 @@ const FormsLogin = () => {
         cookie.set('roles', result.roles[0])
 
         // Redireciona para a página incial
-        // window.location.href = "/"
+        
       })
       .catch((error) => console.log("error", error))
+      router.push('/')
   }
 
   return (
@@ -74,7 +84,7 @@ const FormsLogin = () => {
         <Button link="/cadastro" title="Cadastre-se" />
       </div>
     </StyledFormsLogin>
-  );
-};
+  )
+}
 
 export default FormsLogin;
