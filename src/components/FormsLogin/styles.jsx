@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const StyledFormsLogin = styled.div`
   .formscontainer {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: #ffffff;
     border-radius: 20px;
     padding: 43px 22px;
-    margin: 117px auto 43px;
+    margin: 0px auto 43px;
     width: 360px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
 
@@ -135,10 +136,10 @@ export const StyledFormsLogin = styled.div`
       width: 300px;
       text-transform: uppercase;
     }
-  }
-  @keyframes is-rotating {
-    to {
-      transform: rotate(1turn);
+    @keyframes is-rotating {
+      to {
+        transform: rotate(1turn);
+      }
     }
   }
 `;
