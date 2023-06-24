@@ -1,27 +1,38 @@
 import axios from 'axios'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import cookie from 'js-cookie';
+import MyComponent from '@/components/ContextTeste';
+import { HomeContextProvider } from '@/components/Context/HomeContext';
 
 
 function Home({ result, error }) {
-  // Set a cookie
+  const [logado, setLogado ] = useState(false)
+
   useEffect(() => {
-    // Set the cookie on the frontend
-    const myCookieValue = cookie.get('myCookie');
-    console.log(myCookieValue);
-  }, []);
+    setLogado(cookie.get('myCookie') ? true : false)
+  }, [cookie.get('myCookie') ]);
+
+  // Carrega os 10 primeiros posts para quando o usuário não está logado
+  useEffect(() => {
+
+  }, [])
 
   // Get a cookie
   
   // console.log(myCookieValue); // Outputs: 'example-value'
 
-  console.log(result)
-  return (
-    <>
-      {/* {console.log(dados)} */}
-      <h1>Teste</h1>
-    </>
-  )
+  if(logado)
+    return (
+      <HomeContextProvider>
+        <MyComponent />
+      </HomeContextProvider>
+    )
+  else
+    return (
+      <>
+        <h1>Teste</h1>
+      </>
+    )
 }
 
 export default Home

@@ -15,6 +15,10 @@ export const ButtonStyled = styled.a`
   font-weight: bold;
   cursor: pointer;
 
+  &.deactive{
+    display: none;
+  }
+
   &:hover {
     background-color: #960018;
   }

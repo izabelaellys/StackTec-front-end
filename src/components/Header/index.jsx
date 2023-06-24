@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <StyledHeader index={nome ? 1 : 0}>
-      <a href="/" className="logo"><img src="logo.png" alt="logo" /></a>
+      <a href="/" className="logo"><img src="/logo.png" alt="logo" /></a>
       <form className="caixa-pesquisa">
         <input type="text" placeholder="O que você está buscando?" />
           <span className="search-icon"><svg className="svgIcon-use" width="30" height="40" viewbox="0 -5 28 15">

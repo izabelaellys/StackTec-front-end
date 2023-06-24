@@ -1,10 +1,19 @@
-import { useState } from "react";
-import { StyledEditeUser } from "./styles";
+import { useEffect, useState } from "react"
+import { StyledEditeUser } from "./styles"
 
-const EditeUser = ({ email, name, nickname, editeLevel }) => {
-  const [formEmail, setFormEmail] = useState(email);
-  const [formName, setFormName] = useState(name);
-  const [formNickname, setFormNickname] = useState(nickname);
+const EditeUser = ({ email, name, editeLevel }) => {
+  const [formEmail, setFormEmail] = useState()
+  const [formName, setFormName] = useState()
+  const [formNickname, setFormNickname] = useState()
+  const [formLevel, setFormLevel] = useState()
+  const [formSemestre, setFormSemestre] = useState()
+  const [formPassword, setFormPassword] = useState()
+  const [formConfirmPassword, setFormConfirmPassword] = useState()
+
+  useEffect(() => {
+    setFormEmail(email)
+    setFormName(name)
+  }, [email, name])
 
   return (
     <StyledEditeUser>
@@ -14,18 +23,18 @@ const EditeUser = ({ email, name, nickname, editeLevel }) => {
       </div>
       <form id="alteracao-dados-form" method="POST">
         <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" value={formEmail} onChange={(e) => setFormEmail(e.target.value)} required />
 
         <label for="name">Nome Completo</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="name" name="name" value={formName} onChange={(e) => setFormName(e.target.value)} required />
 
         <label for="apelido">Apelido</label>
-        <input type="text" id="apelido" name="apelido" required />
+        <input type="text" id="apelido" name="apelido" value={formNickname} onChange={(e) => setFormNickname(e.target.value)} required />
 
         {editeLevel && 
         <>
           <label for="role">Nível de acesso</label>
-          <select id="role" name="role">
+          <select id="role" name="role" value={formLevel} onChange={(e) => setFormLevel(e.target.value)} >
             <option value="" disabled selected>
               Selecione o nível de privilégio
             </option>
@@ -35,7 +44,7 @@ const EditeUser = ({ email, name, nickname, editeLevel }) => {
         </>}
 
         <label for="semestre">Semestre</label>
-        <select id="semestre" name="semestre" required>
+        <select id="semestre" name="semestre" value={formSemestre} onChange={(e) => setFormSemestre(e.target.value)} required>
           <option value="" disabled selected>
             Selecione um semestre
           </option>
@@ -55,6 +64,7 @@ const EditeUser = ({ email, name, nickname, editeLevel }) => {
           id="password"
           name="password"
           minlength="6"
+          value={formPassword} onChange={(e) => setFormPassword(e.target.value)}
           required
         />
 
@@ -64,6 +74,7 @@ const EditeUser = ({ email, name, nickname, editeLevel }) => {
           id="confirm-password"
           name="confirm-password"
           minlength="6"
+          value={formConfirmPassword} onChange={(e) => setFormConfirmPassword(e.target.value)}
           required
         />
 
