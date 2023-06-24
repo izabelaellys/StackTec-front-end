@@ -37,6 +37,22 @@ export const StyledSinglePost = styled.div`
 
   .editor{
     margin: 20px 0 0;
+
+    p{
+      display: none;
+      font-weight: bold;
+      margin: 16px 0px;
+    }
+
+    .sucess{
+      display: block;
+      color: #26B11A;
+    }
+
+    .error{
+      display: block;
+      color: #FF0000;
+    }
   }
 
   .posttags {
@@ -52,5 +68,21 @@ export const StyledSinglePost = styled.div`
 
   .postComentarios{
     margin-top: 20px;
+
+    .comentariocard{
+      margin: 16px 0 0;
+
+      .comentarioautor{
+        font-weight: bold;
+      }
+
+      p{
+        margin: 0px;
+      }
+
+      p:last-of-type{
+        margin: 8px 0 0;
+      }
+    }
   }
 `;

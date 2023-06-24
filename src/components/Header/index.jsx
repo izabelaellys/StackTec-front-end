@@ -26,6 +26,7 @@ const Header = () => {
     cookie.remove('name')
     cookie.remove('email')
     cookie.remove('roles')
+    cookie.remove('id')
     setNome('')
   }
 

@@ -40,6 +40,7 @@ const FormsLogin = () => {
         // Salva os dados em cookies
         cookie.set('myCookie', result.cookie)
         cookie.set('name', result.nome)
+        cookie.set('id', result.id)
         cookie.set('email', result.email)
         cookie.set('roles', result.roles[0])
 
