@@ -14,7 +14,7 @@ const PostList = ({ data }) => {
           <div className="questioncard">
             <div>
               <p>{post?.votos} votos</p>
-              <p className="resposta">- resposta</p>
+              <p className={post?.respostas > 0 ? 'resposta active' : 'resposta'}>{post?.respostas} resposta</p>
             </div>
             <div className="questioncontent">
               <div className="buttoncontainer">

@@ -61,7 +61,7 @@ export const StyledHeader = styled.nav`
     }
 
     .btn:nth-of-type(2) {
-      width: 115px;
+      width: 130px;
     }
   }
 

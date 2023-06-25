@@ -10,10 +10,10 @@ const SideMenu = () => {
 
   useEffect(() => {
     setRule(cookie.get('roles'))
-  }, [])
+  }, [cookie.get('roles')])
   
   return (
-    <StyledSideMenu className={rule == "ROLE_ADMIN" || rule == "ROLE_ALUNO" ? 'active' : ''}>
+    <StyledSideMenu className={rule == "ROLE_ADMIN" || rule == "ROLE_ALUNO" ? 'active' : ''} index={rule == "ROLE_ADMIN" || rule == "ROLE_ALUNO" ? '1' : '0'}>
       <a href="/" className={router.pathname === '/' ? 'active' : ''}>
         <img src="/icons/home.png" alt="Home" />
         Home

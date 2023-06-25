@@ -6,7 +6,7 @@ export const StyledSideMenu = styled.div`
   left: 0;
   display: none;
   flex-direction: column;
-  max-width: 260px;
+  max-width: 320px;
   width: 100%;
   padding: 43px 20px 0px 46px;
 

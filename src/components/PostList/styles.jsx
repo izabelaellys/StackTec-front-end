@@ -24,6 +24,11 @@ export const StyledPostList = styled.div`
       border: 1px solid #FF0000;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
       border-radius: 5px;
+      margin: 20px 0 0;
+
+      &.active{
+        border: 1px solid #26B11A;
+      }
     }
 
     .buttoncontainer {
@@ -53,8 +58,6 @@ export const StyledPostList = styled.div`
       }
     }
 
-    
-
     .questioncontent > a{
       font-size: 18px;
       line-height: 25px;
@@ -68,6 +71,5 @@ export const StyledPostList = styled.div`
 
   .btn{
     margin: 30px auto 0;
-    width: 90px;
   }
 `
