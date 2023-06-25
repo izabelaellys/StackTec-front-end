@@ -3,18 +3,27 @@ import Header from '@/components/Header'
 import SideMenu from '@/components/SideMenu'
 import '@/styles/globals.css'
 import {HomeContextProvider } from '@/components/Context/HomeContext';
+import Head from 'next/head';
+import StylesReset from '@/styles/reset';
+import GlobalStyles from '@/styles/global';
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Header />
-      <SideMenu />
-      <main>
-        <HomeContextProvider>
-          <Component {...pageProps} />
-        </HomeContextProvider>
-      </main>
-      <Footer />
+      <Head>
+
+      </Head>
+      <StylesReset />
+      <GlobalStyles />
+        <Header />
+        <SideMenu />
+        <main>
+          <HomeContextProvider>
+            <Component {...pageProps} />
+          </HomeContextProvider>
+        </main>
+        <Footer />
+      
     </>
   )
 }

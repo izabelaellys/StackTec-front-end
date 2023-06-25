@@ -26,7 +26,7 @@ const PostList = ({ data }) => {
                   );
                 })}
               </div>
-              <a href="/">{post?.titulo}</a>
+              <a href={"/post/" + post.id}>{post?.titulo}</a>
             </div>
           </div>
         );
