@@ -7,19 +7,20 @@ export const StyledSearchBar = styled.form`
   height: 60px;
   width: 100%;
 
-  input{
+  input {
     width: 100%;
     height: 39px;
-    background: #D9D9D9;
+    background: #d9d9d9;
     border: none;
     border-radius: 20px;
     padding: 0 50px 0 23px;
     outline: none;
   }
 
-  .search-icon{
+  .search-icon {
     position: absolute;
     right: 10px;
     top: 0px;
+    cursor: pointer;
   }
-`
+`;
