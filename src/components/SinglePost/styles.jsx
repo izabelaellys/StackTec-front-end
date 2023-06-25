@@ -36,8 +36,8 @@ export const StyledSinglePost = styled.div`
       font-weight: bold;
     }
 
-    .btn-vote {
-      margin: 0;
+    .btn{
+      margin: 0;      
     }
   }
 

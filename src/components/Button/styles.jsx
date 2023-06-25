@@ -22,4 +22,20 @@ export const ButtonStyled = styled.a`
   &:hover {
     background-color: #960018;
   }
+
+  &.btn-vote{
+    background-color: #d1001c;
+
+    &:hover{
+      background-color: #26B11A;
+    }
+  }
+
+  &.btn-vote-del{
+    background-color: #26B11A;
+
+    &:hover{
+      background-color: #d1001c;
+    }
+  }
 `;

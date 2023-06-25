@@ -2,7 +2,6 @@ import SinglePost from '@/components/SinglePost';
 import axios from 'axios'
 
 const Post = ({ data }) => {
-
   return (
     <>
       <SinglePost data={data} />
