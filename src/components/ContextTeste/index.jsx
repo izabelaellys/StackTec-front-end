@@ -14,7 +14,7 @@ const MyComponent = () => {
   return (
     <div>
       <p>Context data: {data}</p>
-      <button onClick={handleClick}>Update Context</button>
+      <button onClick={() => setData('bla bla')}>Update Context</button>
     </div>
   );
 };

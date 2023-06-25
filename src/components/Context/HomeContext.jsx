@@ -3,10 +3,10 @@ import React, { createContext, useState } from 'react';
 const HomeContext = createContext();
 
 const HomeContextProvider = ({ children }) => {
-  const [data, setData] = useState('');
+  const [orderBy, setOrderBy] = useState('recentes');
 
   return (
-    <HomeContext.Provider value={{ data, setData }}>
+    <HomeContext.Provider value={{ orderBy, setOrderBy }}>
       {children}
     </HomeContext.Provider>
   );

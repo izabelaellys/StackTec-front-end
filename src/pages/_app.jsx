@@ -2,6 +2,7 @@ import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import SideMenu from '@/components/SideMenu'
 import '@/styles/globals.css'
+import {HomeContextProvider } from '@/components/Context/HomeContext';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -9,7 +10,9 @@ export default function App({ Component, pageProps }) {
       <Header />
       <SideMenu />
       <main>
-        <Component {...pageProps} />
+        <HomeContextProvider>
+          <Component {...pageProps} />
+        </HomeContextProvider>
       </main>
       <Footer />
     </>

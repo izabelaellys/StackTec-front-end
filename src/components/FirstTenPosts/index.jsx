@@ -24,18 +24,18 @@ const FirstTenPosts = () => {
       {openModal && <Modal message="Para ver os detalhes do post é necessário estar logado" titleButton="Login" href="/login" isOpen={true} externalAction={setOpenModal}/>}
       {postList?.map((post) => {
         return (
-          <div class="questioncard" onClick={(e) => {
+          <div className="questioncard" onClick={(e) => {
             e.preventDefault()
             setOpenModal(true)
           }}>
             <div>
               <p>{post?.votos} votos</p>
-              <p class="resposta">- resposta</p>
+              <p className="resposta">- resposta</p>
             </div>
-            <div class="questioncontent">
+            <div className="questioncontent">
               <div className="buttoncontainer">
                 {post?.tags?.map((tag) => {
-                  return <a href={"/post-by-tag?tag=" + tag} class="btn-tag">{tag}</a>;
+                  return <a href={"/post-by-tag?tag=" + tag} className="btn-tag">{tag}</a>;
                 })}
               </div>
               <a href="/">{post?.titulo}</a>

@@ -10,7 +10,6 @@ const TagsList = () => {
   const { page } = router.query
   const [tags, setTags] = useState()
   const [totalPages, setTotalPages] = useState()
-  const [contador, setContador] = useState(1)
 
   useEffect(() => {
     const fetchData = async () => {

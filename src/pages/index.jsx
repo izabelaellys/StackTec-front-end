@@ -1,40 +1,51 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import cookie from 'js-cookie';
-import MyComponent from '@/components/ContextTeste';
-import { HomeContextProvider } from '@/components/Context/HomeContext';
+import {HomeContext} from '@/components/Context/HomeContext';
 import TagsBar from '@/components/TagsBar';
 import FirstTenPosts from '@/components/FirstTenPosts';
+import PostAction from '@/components/PostAction';
 
+import { useRouter } from 'next/router';
+import PostList from '@/components/PostList';
 
-function Home({ result, error }) {
+function Home({ result }) {
+  const itemsByPage = 6
+  const router = useRouter()
+  const { page } = router.query
+  const {orderBy} = useContext(HomeContext)
   const [logado, setLogado ] = useState(false)
+  
+  useEffect(() => {
+    const data = {
+      page: page || 1,
+      orderBy: orderBy || 'recentes',
+      itemsByPage: itemsByPage
+    }
+
+    router.push({
+      pathname: '/',
+      query: data,
+    });
+  }, [orderBy, page])
 
   useEffect(() => {
     setLogado(cookie.get('myCookie') ? true : false)
   }, [cookie.get('myCookie') ]);
 
-  // Carrega os 10 primeiros posts para quando o usuário não está logado
-  useEffect(() => {
-
-  }, [])
-
-  // Get a cookie
-  
-  // console.log(myCookieValue); // Outputs: 'example-value'
-
   if(logado)
     return (
-      <HomeContextProvider>
-        <MyComponent />
+      <>
         <TagsBar className="active"/>
-        <FirstTenPosts />
-      </HomeContextProvider>
+        <PostAction />
+        <PostList data={result}/>
+      </>
+      
     )
   else
     return (
       <>
-        <h1>Teste</h1>
+        <FirstTenPosts />
       </>
     )
 }
@@ -42,35 +53,36 @@ function Home({ result, error }) {
 export default Home
 
 export async function getServerSideProps(context) {
-  const { req } = context;
-  const myCookieValue = req.cookies.myCookie; // Replace 'myCookie' with the actual name of your cookie
+  const { req, query } = context;
+  const myCookieValue = req.cookies.myCookie;
+  const {page, orderBy, itemsByPage} = query;
 
-  console.log(myCookieValue); 
+  const url = 'http://localhost:8080/api/post/v1.1/getPageable/' + page + '/' + itemsByPage + '/' + orderBy
   
   const myHeaders = {
-    Cookie: myCookieValue
-  };
-
-  const requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
+    accept: 'application/json',
+    'Content-Type': 'application/json',
+    Cookie: myCookieValue,
   };
 
   try {
-    const response = await axios.get("http://localhost:8080/api/post/v1.1/2", requestOptions);
+    const response = await axios.post(url, null, {
+      headers: myHeaders,
+    });
     const result = response.data;
+
     return {
       props: {
-        result
-      }
-    }
+        result,
+      },
+    };
   } catch (error) {
-    console.log('error', error);
+    console.log('Error:', error);
+
     return {
       props: {
-        error: error.message
-      }
+        result: null,
+      },
     };
   }
 }
