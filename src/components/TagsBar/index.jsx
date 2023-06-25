@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { StyledTagsBar } from "./styles";
 import axios from "axios";
 
-const TagsBar = () => {
+const TagsBar = ({className}) => {
   const [tags, setTags] = useState()
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const TagsBar = () => {
   }
 
   return (
-    <StyledTagsBar className="active">
+    <StyledTagsBar className={className}>
       <p>Principais tags:</p>
       <div class="buttoncontainer">
         {tags?.tagDtos?.map((tag) => {
