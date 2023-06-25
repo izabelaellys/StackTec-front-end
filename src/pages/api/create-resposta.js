@@ -30,6 +30,6 @@ export default async function createRespostaAPI(req, res){
     console.log(response)
     res.status(200).json(response.data);
   } catch (error) {
-    res.status(200).json(response.data);
+    res.status(500).json(error);
   }
 }

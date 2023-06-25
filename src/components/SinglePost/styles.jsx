@@ -7,13 +7,15 @@ export const StyledSinglePost = styled.div`
   h1 {
     margin: 0 0 20px;
     font-size: 64px;
+    line-height: 64px;
   }
 
   h2 {
     margin: 20px 0;
+    line-height: 24px;
   }
 
-  img{
+  img {
     height: auto;
     max-width: 100%;
     object-fit: cover;
@@ -38,39 +40,39 @@ export const StyledSinglePost = styled.div`
       font-weight: bold;
     }
 
-    .btn{
-      margin: 0;      
+    .btn {
+      margin: 0;
     }
   }
 
-  .editor{
+  .editor {
     margin: 20px 0 0;
 
-    &.deactive{
-      display: none
+    &.deactive {
+      display: none;
     }
 
-    p{
+    p {
       display: none;
       font-weight: bold;
       margin: 16px 0px;
     }
 
-    .sucess{
+    .sucess {
       display: block;
-      color: #26B11A;
+      color: #26b11a;
     }
 
-    .error{
+    .error {
       display: block;
-      color: #FF0000;
+      color: #ff0000;
     }
   }
 
   .posttags {
     margin-top: 20px;
 
-    a{
+    a {
       margin-right: 10px;
       color: #000000;
       text-decoration: none;
@@ -78,53 +80,74 @@ export const StyledSinglePost = styled.div`
     }
   }
 
-  .postComentarios{
+  .postComentarios {
     margin-top: 20px;
 
-    .comentariocard{
+    .comentariocard {
       margin: 16px 0 0;
 
-      .comentarioautor{
+      .comentarioautor {
         font-weight: bold;
       }
 
-      p{
+      p {
         margin: 0px;
       }
 
-      p:last-of-type{
+      p:last-of-type {
         margin: 8px 0 0;
       }
     }
   }
 
-  .postresposta{
-    .respostacontainer{
+  .postresposta {
+    .respostacontainer {
       margin: 20px 0 0;
       padding: 20px;
       border: 1px solid black;
 
-      &.active{
+      &.active {
         background: rgba(38, 177, 26, 0.15);
       }
 
-      .comentariosResposta{
+      .comentariosResposta {
         margin: 20px 0 0;
-        h3{
+        h3 {
           font-size: 18px;
         }
 
-        .comentarioautor{
+        .comentarioautor {
           margin: 16px 0 0;
           font-weight: bold;
         }
 
-        p{
+        p {
           margin: 0px;
         }
 
-        p:last-of-type{
+        p:last-of-type {
           margin: 8px 0 0;
+        }
+      }
+
+      .btn {
+        margin: 10px auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #d1001c;
+        color: white;
+        padding: 0px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        height: 40px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #960018;
         }
       }
     }
