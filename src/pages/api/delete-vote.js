@@ -11,8 +11,7 @@ export default async function deleteVoteAPI(req, res) {
 
   try {
     const response = await axios.delete(url, { headers });
-
-    console.log(response)
+    
     res.status(200).send(response.data);
   } catch (error) {
     res.status(500).send(`Error: ${error.message}`);

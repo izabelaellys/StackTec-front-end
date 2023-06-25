@@ -16,7 +16,6 @@ const SinglePost = ({ data }) => {
   const [comentarioRespostaMsg, setComentarioRespostaMsg] = useState(0);
   const router = useRouter();
   const [comentarioResposta, setComentarioResposta] = useState();
-  console.log(data);
 
   const makeResposta = async (e) => {
     e.preventDefault();
@@ -29,7 +28,6 @@ const SinglePost = ({ data }) => {
         respostaEditor,
       });
 
-      console.log(response);
       setTimeout(router.reload(window.location.pathname), 1000);
     } catch (error) {
       console.log(error);
@@ -57,7 +55,7 @@ const SinglePost = ({ data }) => {
         MyCookie,
         postId,
       });
-      console.log(response);
+
       setTimeout(router.reload(window.location.pathname), 1000);
     } catch (error) {
       console.log(error);
@@ -73,7 +71,6 @@ const SinglePost = ({ data }) => {
         postId,
       });
 
-      console.log(response);
       setTimeout(router.reload(window.location.pathname), 1000);
     } catch (error) {
       console.log(error);
@@ -134,8 +131,6 @@ const SinglePost = ({ data }) => {
   };
 
   const aceitaResposta = async (tagId) => {
-    console.log(tagId)
-
     try {
       const response = await axios.post("/api/aceita-resposta", {
         MyCookie,
