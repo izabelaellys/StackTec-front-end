@@ -68,7 +68,7 @@ const SinglePost = ({ data }) => {
       <div className="posttags">
         <h2>Tags ({data?.tags.length})</h2>
         {data?.tags.map((tag) => {
-          return <a href={"postsbytag?tag=" + tag}>{tag}</a>;
+          return <a href={"posts-by-tag?tag=" + tag}>{tag}</a>;
         })}
       </div>
       <div>

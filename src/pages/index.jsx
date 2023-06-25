@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import cookie from 'js-cookie';
 import MyComponent from '@/components/ContextTeste';
 import { HomeContextProvider } from '@/components/Context/HomeContext';
+import TagsBar from '@/components/TagsBar';
 
 
 function Home({ result, error }) {
@@ -25,6 +26,7 @@ function Home({ result, error }) {
     return (
       <HomeContextProvider>
         <MyComponent />
+        <TagsBar />
       </HomeContextProvider>
     )
   else
