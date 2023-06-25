@@ -11,6 +11,12 @@ export const StyledSinglePost = styled.div`
     margin: 20px 0;
   }
 
+  img{
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
   .btn {
     width: 100px;
     margin: 20px auto 0;

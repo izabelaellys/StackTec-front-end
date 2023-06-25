@@ -63,6 +63,7 @@ const SinglePost = ({ data }) => {
       <div className="postvotos">
         <p>Quantidade de votos: {data?.votos}</p>
         <Button deactive={data?.votado} title="Votar" className={"btn-vote"} />
+        <Button deactive={data?.votado} title="Retirar Voto" className={"btn-vote-del"} />
       </div>
       <div className="posttags">
         <h2>Tags ({data?.tags.length})</h2>
@@ -77,6 +78,7 @@ const SinglePost = ({ data }) => {
           return <div dangerouslySetInnerHTML={{ __html: resposta }} />;
         })}
         <div className="editor">
+          {console.log(JSON.stringify(respostaEditor))}
           <TinyMCEEditor setEditorContent={setEditorResposta} />
           <Button event={handleSave} title="Enviar" />
         </div>

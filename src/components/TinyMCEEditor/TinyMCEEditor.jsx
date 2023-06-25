@@ -13,7 +13,7 @@ const TinyMCEEditor = ({setEditorContent }) => {
         skin: 'bootstrap',
         plugins: 'lists, link, image, media',
         toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help',
-        menubar: true,
+        menubar: false,
         setup: (editor) => {
           editor.on('change', () => {
             const content = editor.getContent()
