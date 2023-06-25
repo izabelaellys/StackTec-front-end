@@ -77,7 +77,6 @@ export const StyledEditorCard = styled.div`
   }
 
   .btn {
-    width: 90px;
     margin: 16px auto 0;
   }
 `;

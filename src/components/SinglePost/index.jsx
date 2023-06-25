@@ -4,26 +4,40 @@ import { StyledSinglePost } from "./styles";
 import Button from "../Button";
 import axios from "axios";
 import cookie from "js-cookie";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 const SinglePost = ({ data }) => {
   const [autorId, setAutorId] = useState();
   const [comentarioEditor, setComentarioEditor] = useState();
-  const [MyCookie, setMyCookie] = useState()
+  const [MyCookie, setMyCookie] = useState();
   const [respostaEditor, setEditorResposta] = useState();
   const [postId, setPostId] = useState();
   const [comentarioMsg, setComentarioMsg] = useState(0);
-  const router = useRouter()
+  const router = useRouter();
   console.log(data);
 
-  const handleSave = () => {
-    console.log(respostaEditor);
+  const makeResposta = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("/api/create-resposta", {
+        MyCookie,
+        autorId,
+        postId,
+        respostaEditor
+      });
+
+      console.log(response);
+      setTimeout(router.reload(window.location.pathname), 1000);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     setAutorId(cookie?.get("id"));
     setPostId(data?.id);
-    setMyCookie(cookie?.get("myCookie"))
+    setMyCookie(cookie?.get("myCookie"));
   }, [cookie?.get("id"), data?.id, cookie?.get("myCookie")]);
 
   useEffect(() => {
@@ -36,40 +50,42 @@ const SinglePost = ({ data }) => {
   const makeVote = async (e) => {
     e.preventDefault();
 
-    try{
+    try {
       const response = await axios.post("/api/create-vote", {
         MyCookie,
-        postId
+        postId,
       });
-      console.log(response)
-      setTimeout(router.reload(window.location.pathname), 1000)
-    } catch (error){
+      console.log(response);
+      setTimeout(router.reload(window.location.pathname), 1000);
+    } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const deleteVote = async (e) => {
     e.preventDefault();
 
-    try{
+    try {
       const response = await axios.post("/api/delete-vote", {
         MyCookie,
-        postId
+        postId,
       });
 
-      console.log(response)
-      setTimeout(router.reload(window.location.pathname), 1000)
-    } catch (error){
+      console.log(response);
+      setTimeout(router.reload(window.location.pathname), 1000);
+    } catch (error) {
       console.log(error);
     }
-  }
+  };
+
+  console.log(MyCookie)
 
   const makeComment = async (e) => {
     e.preventDefault();
 
-    if(!comentarioEditor){
-      setComentarioMsg(2)
-      return
+    if (!comentarioEditor) {
+      setComentarioMsg(2);
+      return;
     }
 
     try {
@@ -80,11 +96,11 @@ const SinglePost = ({ data }) => {
         comentarioEditor,
       });
 
-      setComentarioEditor('')
-      setComentarioMsg(1)
-      setTimeout(router.reload(window.location.pathname), 1000)
+      setComentarioEditor("");
+      setComentarioMsg(1);
+      setTimeout(router.reload(window.location.pathname), 1000);
     } catch (error) {
-      setComentarioMsg(2)
+      setComentarioMsg(2);
       console.log(error);
     }
   };
@@ -96,8 +112,18 @@ const SinglePost = ({ data }) => {
 
       <div className="postvotos">
         <p>Quantidade de votos: {data?.votos}</p>
-        <Button deactive={data?.votado} title="Votar" className={"btn-vote"} event={makeVote} />
-        <Button deactive={!data?.votado} title="Votado" className={"btn-vote-del"} event={deleteVote}/>
+        <Button
+          deactive={data?.votado}
+          title="Votar"
+          className={"btn-vote"}
+          event={makeVote}
+        />
+        <Button
+          deactive={!data?.votado}
+          title="Votado"
+          className={"btn-vote-del"}
+          event={deleteVote}
+        />
       </div>
       <div className="posttags">
         <h2>Tags ({data?.tags.length})</h2>
@@ -130,19 +156,38 @@ const SinglePost = ({ data }) => {
           <Button event={makeComment} title="Enviar" />
         </div>
       </div>
-      <div>
+      <div className="postresposta">
         <h2>Respostas ({data?.respostas.length})</h2>
 
-        {data?.respostas.map((resposta) => {
-          return <div dangerouslySetInnerHTML={{ __html: resposta }} />;
-        })}
-        <div className="editor">
-          {console.log(JSON.stringify(respostaEditor))}
+          {data?.respostas?.map((resposta) => {
+            return (
+              <div className={resposta?.aceita ? 'respostacontainer active' : 'respostacontainer'}>
+                <div dangerouslySetInnerHTML={{ __html: resposta?.descricao }} />
+                <div className="comentariosResposta">
+                  <h3>Comentários ( {resposta?.comentarios?.length} )</h3>
+                  {resposta?.comentarios?.map(comentario => {
+                    return(
+                      <>
+                        <p className="comentarioautor">{comentario.autorApelido}</p>
+                        <p>{comentario.texto}</p>
+                      </>
+                    )
+                  })}
+                </div>
+                <div className="editor">
+                  <textarea
+                    placeholder="Fazer comentário"
+                  ></textarea>
+                  <Button title="Enviar" />
+                </div>
+              </div>
+            );
+          })}
+        <div className={data?.postStatus == 'ABERTO' ? 'editor' : 'editor deactive'}>
           <TinyMCEEditor setEditorContent={setEditorResposta} />
-          <Button event={handleSave} title="Enviar" />
+          <Button event={makeResposta} title="Enviar" />
         </div>
       </div>
-      
     </StyledSinglePost>
   );
 };

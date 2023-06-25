@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const StyledSinglePost = styled.div`
   padding: 60px 0 40px;
+  line-height: 25px;
+
   h1 {
     margin: 0 0 20px;
     font-size: 64px;
@@ -43,6 +45,10 @@ export const StyledSinglePost = styled.div`
 
   .editor{
     margin: 20px 0 0;
+
+    &.deactive{
+      display: none
+    }
 
     p{
       display: none;
@@ -88,6 +94,38 @@ export const StyledSinglePost = styled.div`
 
       p:last-of-type{
         margin: 8px 0 0;
+      }
+    }
+  }
+
+  .postresposta{
+    .respostacontainer{
+      margin: 20px 0 0;
+      padding: 20px;
+      border: 1px solid black;
+
+      &.active{
+        background: rgba(38, 177, 26, 0.15);
+      }
+
+      .comentariosResposta{
+        margin: 20px 0 0;
+        h3{
+          font-size: 18px;
+        }
+
+        .comentarioautor{
+          margin: 16px 0 0;
+          font-weight: bold;
+        }
+
+        p{
+          margin: 0px;
+        }
+
+        p:last-of-type{
+          margin: 8px 0 0;
+        }
       }
     }
   }
