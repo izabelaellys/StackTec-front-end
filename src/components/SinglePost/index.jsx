@@ -80,8 +80,6 @@ const SinglePost = ({ data }) => {
     }
   };
 
-  console.log(MyCookie);
-
   const makeComment = async (e) => {
     e.preventDefault();
 
@@ -110,6 +108,8 @@ const SinglePost = ({ data }) => {
     }
   };
 
+  
+
   const makeCommentResposta = async (respostaId) => {
     if (!comentarioResposta) {
       setComentarioRespostaMsg(2);
@@ -133,57 +133,74 @@ const SinglePost = ({ data }) => {
     }
   };
 
+  const aceitaResposta = async (tagId) => {
+    console.log(tagId)
+
+    try {
+      const response = await axios.post("/api/aceita-resposta", {
+        MyCookie,
+        tagId
+      });
+
+      setTimeout(router.reload(window.location.pathname), 1000);
+    } catch (error){
+      console.log(error)
+    }
+  };
+
   return (
     <StyledSinglePost>
-      <h1>{data?.titulo}</h1>
-      <div className="postvotos">
-        <p>Votos: {data?.votos}</p>
-        <Button
-          deactive={data?.votado}
-          title="Votar"
-          className={"btn-vote"}
-          event={makeVote}
-        />
-        <Button
-          deactive={!data?.votado}
-          title="Votado"
-          className={"btn-vote-del"}
-          event={deleteVote}
-        />
-      </div>
-      <div dangerouslySetInnerHTML={{ __html: data?.descricao }} />
+      <div className="postcontent">
+        <h1>{data?.titulo}</h1>
+        <div className="postvotos">
+          <p>Votos: {data?.votos}</p>
+          <Button
+            deactive={data?.votado}
+            title="Votar"
+            className={"btn-vote"}
+            event={makeVote}
+          />
+          <Button
+            deactive={!data?.votado}
+            title="Votado"
+            className={"btn-vote-del"}
+            event={deleteVote}
+          />
+        </div>
+        <div className="posttags">
+          {data?.tags.map((tag) => {
+            return <a href={"posts-by-tag?tag=" + tag}>{tag}</a>;
+          })}
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: data?.descricao }} />
 
-      <div className="posttags">
-        <h2>Tags ({data?.tags.length})</h2>
-        {data?.tags.map((tag) => {
-          return <a href={"posts-by-tag?tag=" + tag}>{tag}</a>;
-        })}
-      </div>
-      <div className="postComentarios">
-        <h2>Comentários ({data?.comentarios.length})</h2>
-        {data?.comentarios.map((comentario) => {
-          return (
-            <div className="comentariocard">
-              <p className="comentarioautor">{comentario.autorApelido}</p>
-              <p>{comentario.texto}</p>
-            </div>
-          );
-        })}
-        <div className="editor">
-          <textarea
-            placeholder="Fazer comentário"
-            value={comentarioEditor}
-            onChange={(e) => setComentarioEditor(e.target.value)}
-          ></textarea>
-          <p className={comentarioMsg == 1 ? "sucess" : ""}>
-            Comentário Enviado com sucesso
-          </p>
-          <p className={comentarioMsg == 2 ? "error" : ""}>
-            Desculpe! Não foi possível enviar seu comentário
-          </p>
-          <Button event={makeComment} title="Enviar" />
+        <div className="postComentarios">
+          <h2>Comentários ({data?.comentarios.length})</h2>
+          {data?.comentarios.map((comentario) => {
+            return (
+              <div className="comentariocard">
+                <p className="comentarioautor">{comentario.autorApelido}</p>
+                <p>{comentario.texto}</p>
+              </div>
+            );
+          })}
+          <div className="editor">
+            <textarea
+              placeholder="Fazer comentário"
+              value={comentarioEditor}
+              onChange={(e) => setComentarioEditor(e.target.value)}
+            ></textarea>
+            <p className={comentarioMsg == 1 ? "sucess" : ""}>
+              Comentário Enviado com sucesso
+            </p>
+            <p className={comentarioMsg == 2 ? "error" : ""}>
+              Desculpe! Não foi possível enviar seu comentário
+            </p>
+            <Button event={makeComment} title="Enviar" />
+          </div>
         </div>
       </div>
+
       <div className="postresposta">
         <h2>Respostas ({data?.respostas.length})</h2>
 
@@ -196,6 +213,16 @@ const SinglePost = ({ data }) => {
                   : "respostacontainer"
               }
             >
+              <button
+                className={
+                  resposta?.autorId == autorId && data?.postStatus == "ABERTO"
+                    ? "btn-resposta active"
+                    : "btn-resposta"
+                }
+                onClick={(e) => aceitaResposta(resposta?.id)}
+              >
+                Aceitar Resposta
+              </button>
               <div dangerouslySetInnerHTML={{ __html: resposta?.descricao }} />
               <div className="comentariosResposta">
                 <h3>Comentários ( {resposta?.comentarios?.length} )</h3>

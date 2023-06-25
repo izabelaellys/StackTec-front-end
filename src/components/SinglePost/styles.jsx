@@ -4,6 +4,11 @@ export const StyledSinglePost = styled.div`
   padding: 60px 0 40px;
   line-height: 25px;
 
+  .postcontent {
+    border: 1px solid black;
+    padding: 30px;
+  }
+
   h1 {
     margin: 0 0 20px;
     font-size: 64px;
@@ -71,12 +76,28 @@ export const StyledSinglePost = styled.div`
 
   .posttags {
     margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
 
     a {
-      margin-right: 10px;
-      color: #000000;
+      display: flex;
+      align-items: center;
+      background: #cdcdcd;
+      border-radius: 5px;
+      padding: 0px 10px;
+      height: 32px;
+      border: none;
+      cursor: pointer;
       text-decoration: none;
+
+      color: black;
       font-weight: bold;
+      font-size: 12px;
+      line-height: 16px;
+
+      text-transform: capitalize;
     }
   }
 
@@ -108,6 +129,31 @@ export const StyledSinglePost = styled.div`
 
       &.active {
         background: rgba(38, 177, 26, 0.15);
+      }
+
+      .btn-resposta {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background-color: #d1001c;
+        color: white;
+        padding: 0px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        height: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 0 auto;
+
+        &.active{
+          display: flex;
+        }
+
+        &:hover {
+          background-color: #26b11a;
+        }
       }
 
       .comentariosResposta {
