@@ -19,16 +19,9 @@ const TagsList = () => {
   }, [cookie?.get("myCookie")]);
 
   useEffect(() => {
-    if(!page && !search){
-      router.push({
-        pathname: "/tags",
-        query: {
-          page: 1
-        },
-      });
-    }
+    
     const fetchData = async () => {
-      const url = "http://localhost:8080/api/tag/v1.1/paginated-desc/" + page + "/" + itemsByPage
+      const url = "http://localhost:8080/api/tag/v1.1/paginated-desc/" + (page || 1) + "/" + itemsByPage
       try {
         const response = await axios.get(url)
         console.log(response.data)
