@@ -164,7 +164,7 @@ const SinglePost = ({ data }) => {
         </div>
         <div className="posttags">
           {data?.tags.map((tag) => {
-            return <a href={"posts-by-tag?tag=" + tag}>{tag}</a>;
+            return <a href={"/post-by-tag?page=1&tag=" + tag}>{tag}</a>;
           })}
         </div>
         <div dangerouslySetInnerHTML={{ __html: data?.descricao }} />

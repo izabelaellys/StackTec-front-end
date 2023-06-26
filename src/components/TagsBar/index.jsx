@@ -27,20 +27,12 @@ const TagsBar = ({className}) => {
     callTags()
   }, [])
 
-  const buttonTag = (tag) => {
-    return (
-      <a href={"/posts-by-tag?tag=" + tag} class="btn-tag">
-        {tag}
-      </a>
-    )
-  }
-
   return (
     <StyledTagsBar className={className}>
       <p>Principais tags:</p>
       <div class="buttoncontainer">
         {tags?.tagDtos?.map((tag) => {
-          return <a href={"/posts-by-tag?tag=" + tag.nome} class="btn-tag">{tag.nome}</a>;
+          return <a href={"/post-by-tag?page=1&tag=" + tag.nome} class="btn-tag">{tag.nome}</a>;
         })}
         <a href="/tags" class="btn-tag">...</a>
       </div>

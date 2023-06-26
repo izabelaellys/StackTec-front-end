@@ -11,8 +11,8 @@ export const StyledSinglePost = styled.div`
 
   h1 {
     margin: 0 0 20px;
-    font-size: 64px;
-    line-height: 64px;
+    font-size: 32px;
+    line-height: 32px;
   }
 
   h2 {
