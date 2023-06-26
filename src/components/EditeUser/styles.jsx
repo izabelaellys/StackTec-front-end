@@ -23,6 +23,19 @@ export const StyledEditeUser = styled.div`
     }
   }
 
+  .forms-error {
+    display: none;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    color: #eb120ae1;
+    margin: 8px 0 10px;
+
+    &.active {
+      display: block;
+    }
+  }
+
   form {
     display: flex;
     flex-direction: column;

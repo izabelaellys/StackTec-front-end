@@ -9,7 +9,7 @@ const EditeUser = ({ email, name, editeLevel }) => {
   const [formEmail, setFormEmail] = useState();
   const [formName, setFormName] = useState();
   const [formNickname, setFormNickname] = useState();
-  const [formLevel, setFormLevel] = useState(["ROLE_ADMIN"]);
+  const [formLevel, setFormLevel] = useState("ROLE_ADMIN");
   const [formSemestre, setFormSemestre] = useState();
   const [formPassword, setFormPassword] = useState();
   const [formConfirmPassword, setFormConfirmPassword] = useState();
@@ -26,10 +26,11 @@ const EditeUser = ({ email, name, editeLevel }) => {
   useEffect(() => {
     setMyCookie(cookie.get("myCookie"))
     setUserId(cookie.get("id"))
-  }, [cookie.get("myCookie"), cookie.get("id")]);
+  }, [cookie.get("myCookie"), cookie.get("id"), cookie.get('roles')]);
 
   const editeUser = async (e) => {
     e.preventDefault();
+    const level = editeLevel == 'admin' ? formLevel : "ROLE_ALUNO"
 
     if (formConfirmPassword != formPassword) {
       setErrorForms(1);
@@ -61,11 +62,13 @@ const EditeUser = ({ email, name, editeLevel }) => {
         formPassword,
         formName,
         formNickname,
-        formSemestre
+        formSemestre,
+        level: level
       });
 
       cookie.set('name', formName)
       cookie.set('email', formEmail)
+      cookie.set('roles', formLevel)
 
       setTimeout(router.reload(window.location.pathname), 1000);
     } catch (error) {
@@ -80,15 +83,20 @@ const EditeUser = ({ email, name, editeLevel }) => {
         <img src="guaxinim.png" alt="Guaxinim" width="121px" height="48px" />
       </div>
       <form id="alteracao-dados-form" method="POST" onSubmit={(e) => editeUser(e)}>
-        <label for="email">E-mail</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formEmail}
-          onChange={(e) => setFormEmail(e.target.value)}
-          required
-        />
+        
+        {editeLevel == 'admin' && (
+          <>
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formEmail}
+              onChange={(e) => setFormEmail(e.target.value)}
+              required
+            />
+          </>
+        )}
 
         <label for="name">Nome Completo</label>
         <input
@@ -110,7 +118,7 @@ const EditeUser = ({ email, name, editeLevel }) => {
           required
         />
 
-        {editeLevel && (
+        {editeLevel == 'admin' && (
           <>
             <label for="role">Nível de acesso</label>
             <select

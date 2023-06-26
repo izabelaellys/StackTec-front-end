@@ -9,6 +9,7 @@ export default async function updateUserAPI(req, res) {
     formName,
     formNickname,
     formSemestre,
+    level
   } = req.body;
 
   const url = "http://localhost:8080/auth/v1.1/" + userId;
@@ -22,7 +23,7 @@ export default async function updateUserAPI(req, res) {
     email: formEmail,
     name: formName,
     password: formPassword,
-    roles: ["ROLE_ADMIN"],
+    roles: [level],
     semestre: formSemestre,
   };
 
