@@ -5,11 +5,18 @@ import axios from 'axios';
 
 import cookie from 'js-cookie';
 
+
 function PesquisaPost(){
   const router = useRouter()
   const { search } = router.query
   const [MyCookie, setMyCookie] = useState()
   const [posts, setPosts ] = useState()
+
+  useEffect(() => {
+    if(!cookie.get('myCookie')){
+      router.push('/')
+    }
+  }, [cookie.get('myCookie')])
 
   useEffect(() => {
     setMyCookie(cookie?.get('myCookie'))

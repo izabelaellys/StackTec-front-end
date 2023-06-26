@@ -1,7 +1,19 @@
 import SinglePost from '@/components/SinglePost';
 import axios from 'axios'
+import { useRouter } from 'next/router';
+import cookie from 'js-cookie'
+import { useEffect} from "react";
+
 
 const Post = ({ data }) => {
+  const router = useRouter()
+
+  useEffect(() => {
+    if(!cookie.get('myCookie')){
+      router.push('/')
+    }
+  }, [cookie.get('myCookie')])
+
   return (
     <>
       <SinglePost data={data} />
