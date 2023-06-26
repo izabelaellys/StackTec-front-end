@@ -41,7 +41,7 @@ const UserList = () => {
         <p>Nome</p>
         <p>Email</p>
       </div>
-
+      
       {dataUser?.users?.map((item) => {
         return (
           <>
@@ -50,7 +50,15 @@ const UserList = () => {
                 <p>{item?.apelido}</p>
                 <p>{item?.email}</p>
                 <div className="botoes-container">
-                  <a href="" className="editar">
+                  <a href="" className="editar" onClick={(e) => {
+                    e.preventDefault()
+
+                    cookie.set('userId', item?.id)
+                    cookie.set('userEmail', item?.email)
+                    cookie.set('userApelido', item?.apelido)
+
+                    router.push({pathname: '/editar-usuario'})
+                  }}>
                     Editar
                   </a>
                 </div>

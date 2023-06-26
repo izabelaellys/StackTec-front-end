@@ -32,7 +32,6 @@ function PesquisaPost(){
           search,
         });
 
-        console.log(response.data)
         setPosts(response.data)
       } catch (error) {
         console.log(error);

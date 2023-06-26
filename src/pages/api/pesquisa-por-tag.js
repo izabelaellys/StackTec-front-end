@@ -9,8 +9,6 @@ export default async function pesquisaPostPorTagsAPI(req, res){
     Cookie: MyCookie,
   };
 
-  console.log(dataTags)
-
   const data = {
     "ordens": [ orderBy ], 
     "tags": dataTags

@@ -20,7 +20,6 @@ const Post = ({ data }) => {
       <Head>
         <title>StackTec - {data?.titulo}</title>
       </Head>
-      {console.log(data)}
       <SinglePost data={data} />
     </>
   )

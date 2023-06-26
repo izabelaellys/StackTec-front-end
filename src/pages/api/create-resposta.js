@@ -26,8 +26,7 @@ export default async function createRespostaAPI(req, res){
 
   try {
     const response = await axios.post(url, data, { headers });
-
-    console.log(response)
+    
     res.status(200).json(response.data);
   } catch (error) {
     res.status(500).json(error);
