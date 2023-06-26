@@ -64,7 +64,10 @@ const EditeUser = ({ email, name, editeLevel }) => {
         formSemestre
       });
 
-      console.log(response.data)
+      cookie.set('name', formName)
+      cookie.set('email', formEmail)
+
+      setTimeout(router.reload(window.location.pathname), 1000);
     } catch (error) {
       console.log(error);
     }
@@ -76,7 +79,7 @@ const EditeUser = ({ email, name, editeLevel }) => {
         <p>Atualizar dados do usuário</p>
         <img src="guaxinim.png" alt="Guaxinim" width="121px" height="48px" />
       </div>
-      <form id="alteracao-dados-form" method="POST">
+      <form id="alteracao-dados-form" method="POST" onSubmit={(e) => editeUser(e)}>
         <label for="email">E-mail</label>
         <input
           type="email"
@@ -184,7 +187,7 @@ const EditeUser = ({ email, name, editeLevel }) => {
           O Email já está em uso
         </p>
 
-        <input type="submit" value="Atualizar" class="btn" />
+        <input onClick={(e) => editeUser(e)} type="submit" value="Atualizar" class="btn" />
       </form>
     </StyledEditeUser>
   );

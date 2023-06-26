@@ -11,7 +11,7 @@ export default async function updateUserAPI(req, res) {
     formSemestre,
   } = req.body;
 
-  const url = "http://localhost:8080/auth/v1.1/";
+  const url = "http://localhost:8080/auth/v1.1/" + userId;
 
   const headers = {
     Cookie: MyCookie,
@@ -22,12 +22,12 @@ export default async function updateUserAPI(req, res) {
     email: formEmail,
     name: formName,
     password: formPassword,
-    roles: ["ROLE_ADMIN"],
+    // roles: ["ROLE_ADMIN"],
     semestre: formSemestre,
   };
 
   try {
-    const response = await axios.put(url, null, { headers });
+    const response = await axios.put(url, data, { headers });
 
     res.status(200).json(response.data);
   } catch (error) {
