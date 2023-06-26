@@ -30,7 +30,6 @@ const EditeUser = ({ email, name, editeLevel }) => {
 
   const editeUser = async (e) => {
     e.preventDefault();
-    const level = editeLevel == 'admin' ? formLevel : "ROLE_ALUNO"
 
     if (formConfirmPassword != formPassword) {
       setErrorForms(1);
@@ -63,7 +62,7 @@ const EditeUser = ({ email, name, editeLevel }) => {
         formName,
         formNickname,
         formSemestre,
-        level: level
+        level: "ROLE_ADMIN"
       });
 
       cookie.set('name', formName)
@@ -117,24 +116,6 @@ const EditeUser = ({ email, name, editeLevel }) => {
           onChange={(e) => setFormNickname(e.target.value)}
           required
         />
-
-        {editeLevel == 'admin' && (
-          <>
-            <label for="role">Nível de acesso</label>
-            <select
-              id="role"
-              name="role"
-              value={formLevel}
-              onChange={(e) => setFormLevel(e.target.value)}
-            >
-              <option value="" disabled selected>
-                Selecione o nível de privilégio
-              </option>
-              <option value="ROLE_ADMIN">Administrador</option>
-              <option value="ROLE_ALUNO">Aluno</option>
-            </select>
-          </>
-        )}
 
         <label for="semestre">Semestre</label>
         <select

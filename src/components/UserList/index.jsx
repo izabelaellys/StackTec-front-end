@@ -38,7 +38,7 @@ const UserList = () => {
   return (
     <StyledUserList>
       <div className="userhead">
-        <p>Nome</p>
+        <p>Apelido</p>
         <p>Email</p>
       </div>
       
