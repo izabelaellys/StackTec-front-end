@@ -22,7 +22,7 @@ export default async function updateUserAPI(req, res) {
     email: formEmail,
     name: formName,
     password: formPassword,
-    // roles: ["ROLE_ADMIN"],
+    roles: ["ROLE_ADMIN"],
     semestre: formSemestre,
   };
 
