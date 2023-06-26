@@ -2,6 +2,7 @@ import EditeUser from '@/components/EditeUser'
 import cookie from 'js-cookie'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 function AtualizarDados(){
   const [nome, setNome] = useState()
@@ -22,6 +23,9 @@ function AtualizarDados(){
 
   return (
     <>
+      <Head>
+        <title>StackTec - Atualizar dados</title>
+      </Head>
       <EditeUser name={nome} email={email}/>
     </>
   )

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import cookie from 'js-cookie';
+import Head from 'next/head';
 
 
 function PesquisaPost(){
@@ -44,6 +45,9 @@ function PesquisaPost(){
 
   return(
     <>
+      <Head>
+        <title>StackTec - Pesquisa Post</title>
+      </Head>
       <PostCard posts={posts?.postDtos} />
     </>
   )

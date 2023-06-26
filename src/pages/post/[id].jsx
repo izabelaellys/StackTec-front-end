@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useRouter } from 'next/router';
 import cookie from 'js-cookie'
 import { useEffect} from "react";
+import Head from 'next/head';
 
 
 const Post = ({ data }) => {
@@ -16,6 +17,10 @@ const Post = ({ data }) => {
 
   return (
     <>
+      <Head>
+        <title>StackTec - {data?.titulo}</title>
+      </Head>
+      {console.log(data)}
       <SinglePost data={data} />
     </>
   )

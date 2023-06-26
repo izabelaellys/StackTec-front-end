@@ -14,6 +14,9 @@ function Cadastro(){
 
   return(
     <>
+      <Head>
+        <title>StackTec - Cadastro</title>
+      </Head>
       <FormsCadastro />
     </>
   )

@@ -8,6 +8,7 @@ import PostAction from '@/components/PostAction';
 
 import { useRouter } from 'next/router';
 import PostList from '@/components/PostList';
+import Head from 'next/head';
 
 function Home({ result }) {
   const itemsByPage = 6
@@ -36,6 +37,9 @@ function Home({ result }) {
   if(logado)
     return (
       <>
+        <Head>
+          <title>StackTec - Home</title>
+        </Head>
         <TagsBar className="active"/>
         <PostAction />
         <PostList data={result}/>

@@ -1,5 +1,6 @@
 import EditorCard from "@/components/EditorCard";
 import cookie from "js-cookie";
+import Head from "next/head";
 import { useRouter } from 'next/router';
 import { useEffect} from "react";
 
@@ -14,6 +15,9 @@ function Editor(){
   
   return (
     <>
+      <Head>
+        <title>StackTec - Editor</title>
+      </Head>
       <EditorCard />
     </>
   )

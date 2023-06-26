@@ -15,6 +15,7 @@ const TagsList = () => {
   const [MyCookie, setMyCookie] = useState();
   const [tagsSelecionadas, setTagsSelecionadas] = useState();
   const [limiteTag, setLimiteTag ] = useState(0)
+  const [ativador, setAtivador] = useState(0)
 
   useEffect(() => {
     setMyCookie(cookie?.get("myCookie"));
@@ -57,13 +58,13 @@ const TagsList = () => {
 
 
   useEffect(() => {
-    if(!tagsSelecionadas && cookie.get('tags')){
+    if(ativador == 0 && !tagsSelecionadas && cookie.get('tags')){
       setTagsSelecionadas(cookie.get('tags').split(','))
+    }else if(ativador == 1 && !tagsSelecionadas){
+      cookie.remove('tags')
     }
   }, [tagsSelecionadas])
 
-
-  console.log(tagsSelecionadas)
 
   const geraLink = () => {
     const tags = tagsSelecionadas?.join('+')
@@ -73,7 +74,9 @@ const TagsList = () => {
   }
 
   const toogleTag = (tag) => {
-    if(tagsSelecionadas.length < 5){
+    cookie.set('tags', tagsSelecionadas)
+    setAtivador(1)
+    if(tagsSelecionadas?.length < 5 || !tagsSelecionadas){
       setLimiteTag(0)
       if(tagsSelecionadas && !tagsSelecionadas.includes(tag) && tagsSelecionadas != undefined){
         const newTags = [...tagsSelecionadas, tag];
@@ -93,6 +96,7 @@ const TagsList = () => {
     }
 
     cookie.set('tags', tagsSelecionadas)
+    console.log(cookie.get('tags'))
   }
 
   return (
@@ -106,7 +110,7 @@ const TagsList = () => {
       <div class="tagcontent">
         {tags?.map((item) => {
           return (
-            <TagCard className={tagsSelecionadas.includes(item.nome) ? 'active' : ''}>
+            <TagCard className={tagsSelecionadas?.includes(item.nome) ? 'active' : ''}>
               <p className="tagName">{item?.nome}</p>
               <p className="tagQt">{item?.qtdePosts}</p>
               <div class="viewcontainer" onClick={() => toogleTag(item?.nome)} >
@@ -129,7 +133,7 @@ const TagsList = () => {
             <p className={limiteTag == 1 ? 'alert active' : 'alert'}>Só é possível fixar até 5 tags</p>
             <div className="tags-selecionadas-container">
               {tagsSelecionadas?.map(botao => {
-                return <button className="tagbutton">{botao}</button>
+                return <button className="tagbutton" onClick={() => toogleTag(botao)}>{botao}</button>
               })}
             </div>
             <Button title="Pesquisar posts" link={geraLink()} />
