@@ -4,6 +4,8 @@ export default async function pesquisaPostsAPI(req, res){
   const {MyCookie, search } = req.body
   const url = 'http://localhost:8080/api/post/v1.1/search/' + search;
 
+  console.log(url)
+
   const headers = {
     'Content-Type': 'application/json',
     Cookie: MyCookie,

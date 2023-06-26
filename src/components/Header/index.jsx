@@ -40,7 +40,7 @@ const Header = () => {
     router.push({
       pathname: "/pesquisa-post",
       query: {
-        search: searchTerm,
+        search: searchTerm?.replace(' ', '+'),
       },
     });
   }
