@@ -210,7 +210,7 @@ const SinglePost = ({ data }) => {
             >
               <button
                 className={
-                  resposta?.autorId == autorId && data?.postStatus == "ABERTO"
+                  data?.autorId == autorId && data?.postStatus == "ABERTO"
                     ? "btn-resposta active"
                     : "btn-resposta"
                 }
