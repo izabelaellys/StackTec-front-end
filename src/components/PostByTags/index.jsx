@@ -18,14 +18,11 @@ const PostByTags = () => {
   const router = useRouter();
   const { page, tag } = router.query;
   const {orderBy} = useContext(HomeContext)
-
-  console.log(tag)
-
+  
   useEffect(() => {
     setMyCookie(cookie?.get("myCookie"));
     setDataTags(tag?.split(' '))
   }, [cookie?.get("myCookie"), tag]);
-  console.log(dataTags)
 
 
   useEffect(() => {
@@ -56,7 +53,7 @@ const PostByTags = () => {
       <PostAction />
       <PostCard posts={posts?.postDtos} />
       {posts?.totalPages && page < posts?.totalPages && <Button title="Ver mais"  link={"/post-by-tag?page=" + (parseInt(page) + 1) + "&tag=" + tag} />}
-      {!page && posts?.maxResults > 0 && posts?.totalPages > 1 && <Button title="Ver mais"  link={"/post-by-tag?page=" + (parseInt(page) + 1) + "&tag=" + tag} /> }      
+      {!page && posts?.maxResults > 0 && posts?.totalPages > 1 && <Button title="Ver mais"  link={"/post-by-tag?page=" + (parseInt(page) + 1) + "&tag=" + tag} /> } 
     </StyledPostByTags>
   )
 }
