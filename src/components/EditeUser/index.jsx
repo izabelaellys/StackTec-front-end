@@ -1,19 +1,74 @@
-import { useEffect, useState } from "react"
-import { StyledEditeUser } from "./styles"
+import { useEffect, useState } from "react";
+import { StyledEditeUser } from "./styles";
+import axios from "axios";
+import { useRouter } from "next/router";
+import cookie from "js-cookie";
+
 
 const EditeUser = ({ email, name, editeLevel }) => {
-  const [formEmail, setFormEmail] = useState()
-  const [formName, setFormName] = useState()
-  const [formNickname, setFormNickname] = useState()
-  const [formLevel, setFormLevel] = useState()
-  const [formSemestre, setFormSemestre] = useState()
-  const [formPassword, setFormPassword] = useState()
-  const [formConfirmPassword, setFormConfirmPassword] = useState()
+  const [formEmail, setFormEmail] = useState();
+  const [formName, setFormName] = useState();
+  const [formNickname, setFormNickname] = useState();
+  const [formLevel, setFormLevel] = useState(["ROLE_ADMIN"]);
+  const [formSemestre, setFormSemestre] = useState();
+  const [formPassword, setFormPassword] = useState();
+  const [formConfirmPassword, setFormConfirmPassword] = useState();
+  const [errorForms, setErrorForms] = useState(0);
+  const [MyCookie, setMyCookie] = useState()
+  const [userId, setUserId] = useState()
+  const router = useRouter();
 
   useEffect(() => {
-    setFormEmail(email)
-    setFormName(name)
-  }, [email, name])
+    setFormEmail(email);
+    setFormName(name);
+  }, [email, name]);
+
+  useEffect(() => {
+    setMyCookie(cookie.get("myCookie"))
+    setUserId(cookie.get("id"))
+  }, [cookie.get("myCookie"), cookie.get("id")]);
+
+  const editeUser = async (e) => {
+    e.preventDefault();
+
+    if (formConfirmPassword != formPassword) {
+      setErrorForms(1);
+      return;
+    }
+
+    if (!formEmail.endsWith("@fatec.sp.gov.br")) {
+      setErrorForms(2);
+      return;
+    }
+
+    if (
+      !formEmail ||
+      !formPassword ||
+      !formName ||
+      !formNickname ||
+      !formSemestre ||
+      !formConfirmPassword
+    ) {
+      setErrorForms(3);
+      return;
+    }
+
+    try {
+      const response = await axios.post("/api/update-user", {
+        MyCookie,
+        userId,
+        formEmail,
+        formPassword,
+        formName,
+        formNickname,
+        formSemestre
+      });
+
+      console.log(response.data)
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <StyledEditeUser>
@@ -23,28 +78,61 @@ const EditeUser = ({ email, name, editeLevel }) => {
       </div>
       <form id="alteracao-dados-form" method="POST">
         <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" value={formEmail} onChange={(e) => setFormEmail(e.target.value)} required />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formEmail}
+          onChange={(e) => setFormEmail(e.target.value)}
+          required
+        />
 
         <label for="name">Nome Completo</label>
-        <input type="text" id="name" name="name" value={formName} onChange={(e) => setFormName(e.target.value)} required />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formName}
+          onChange={(e) => setFormName(e.target.value)}
+          required
+        />
 
         <label for="apelido">Apelido</label>
-        <input type="text" id="apelido" name="apelido" value={formNickname} onChange={(e) => setFormNickname(e.target.value)} required />
+        <input
+          type="text"
+          id="apelido"
+          name="apelido"
+          value={formNickname}
+          onChange={(e) => setFormNickname(e.target.value)}
+          required
+        />
 
-        {editeLevel && 
-        <>
-          <label for="role">Nível de acesso</label>
-          <select id="role" name="role" value={formLevel} onChange={(e) => setFormLevel(e.target.value)} >
-            <option value="" disabled selected>
-              Selecione o nível de privilégio
-            </option>
-            <option value="ROLE_ADMIN">Administrador</option>
-            <option value="ROLE_ALUNO">Aluno</option>
-          </select>
-        </>}
+        {editeLevel && (
+          <>
+            <label for="role">Nível de acesso</label>
+            <select
+              id="role"
+              name="role"
+              value={formLevel}
+              onChange={(e) => setFormLevel(e.target.value)}
+            >
+              <option value="" disabled selected>
+                Selecione o nível de privilégio
+              </option>
+              <option value="ROLE_ADMIN">Administrador</option>
+              <option value="ROLE_ALUNO">Aluno</option>
+            </select>
+          </>
+        )}
 
         <label for="semestre">Semestre</label>
-        <select id="semestre" name="semestre" value={formSemestre} onChange={(e) => setFormSemestre(e.target.value)} required>
+        <select
+          id="semestre"
+          name="semestre"
+          value={formSemestre}
+          onChange={(e) => setFormSemestre(e.target.value)}
+          required
+        >
           <option value="" disabled selected>
             Selecione um semestre
           </option>
@@ -64,7 +152,8 @@ const EditeUser = ({ email, name, editeLevel }) => {
           id="password"
           name="password"
           minlength="6"
-          value={formPassword} onChange={(e) => setFormPassword(e.target.value)}
+          value={formPassword}
+          onChange={(e) => setFormPassword(e.target.value)}
           required
         />
 
@@ -74,9 +163,26 @@ const EditeUser = ({ email, name, editeLevel }) => {
           id="confirm-password"
           name="confirm-password"
           minlength="6"
-          value={formConfirmPassword} onChange={(e) => setFormConfirmPassword(e.target.value)}
+          value={formConfirmPassword}
+          onChange={(e) => setFormConfirmPassword(e.target.value)}
           required
         />
+
+        <p className={errorForms == 1 ? "forms-error active" : "forms-error"}>
+          As duas senhas precisam ser iguais
+        </p>
+        <p className={errorForms == 2 ? "forms-error active" : "forms-error"}>
+          O Email precisa ser do domínio '@fatec.sp.gov.br'
+        </p>
+        <p className={errorForms == 3 ? "forms-error active" : "forms-error"}>
+          Todos os campos precisão estar preenchidos
+        </p>
+        <p className={errorForms == 4 ? "forms-error active" : "forms-error"}>
+          Desculpa, mas houve algum erro durante a execução do cadastro
+        </p>
+        <p className={errorForms == 5 ? "forms-error active" : "forms-error"}>
+          O Email já está em uso
+        </p>
 
         <input type="submit" value="Atualizar" class="btn" />
       </form>
