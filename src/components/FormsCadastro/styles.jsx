@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledFormsLogin = styled.div`
+export const StyledFormsCadastro = styled.div`
   .formscontainer {
     position: relative;
     display: flex;
@@ -46,6 +46,10 @@ export const StyledFormsLogin = styled.div`
     form {
       width: 360px;
       margin: 41px 0 0;
+
+      .form-group{
+        margin-top: 8px;
+      }
 
       &.deactive {
         display: none;
