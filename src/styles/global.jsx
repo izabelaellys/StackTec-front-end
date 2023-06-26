@@ -24,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     main{
-        padding:  0px 356px 0px 326px;
+        padding:  0px 356px 30px 326px;
         margin-top: 107px;
         min-height: calc(100vh - 137px);
     }

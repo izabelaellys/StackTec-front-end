@@ -7,6 +7,7 @@ import Head from 'next/head';
 import StylesReset from '@/styles/reset';
 import GlobalStyles from '@/styles/global';
 
+
 export default function App({ Component, pageProps }) {
   return (
     <>
@@ -15,15 +16,16 @@ export default function App({ Component, pageProps }) {
       </Head>
       <StylesReset />
       <GlobalStyles />
+        <HomeContextProvider>
         <Header />
-        <SideMenu />
-        <main>
-          <HomeContextProvider>
-            <Component {...pageProps} />
-          </HomeContextProvider>
-        </main>
-        <Footer />
-      
+          <SideMenu />
+          <main>
+            
+              <Component {...pageProps} />
+            
+          </main>
+          <Footer />
+        </HomeContextProvider>
     </>
   )
 }
